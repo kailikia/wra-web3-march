@@ -2,421 +2,178 @@
 
 {% block myotherstyle %}
 
-<style>
-
-</style>
-
 {% endblock %}
 
 {% block content %}
 
-<style>
-    @import url('https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap');
+<div id="content" class="site-content | js-site-content">
+    <main id="main" class="site-main site-main--404">
 
-    * {
-        color: white !important;
-    }
-
-    .image {
-
-        z-index: -1;
-        background-image: url('https://images.unsplash.com/photo-1592623352801-6c507aaf7987?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80');
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: fixed;
-        height: 100vh;
-        width: 100vw;
-        top: 0;
-    }
-
-    /* styles for the chart */
-    #chartdiv {
-        width: 100%;
-        height: 800px;
-        margin-top: 14em;
-    }
-
-    .image_resize {
-        max-width: 100%;
-        height: auto;
-        width: 70px;
-        height: 70px;
-    }
-</style>
-
-<div class="image"></div>
-
-<!-- This is the graph -->
-<div class="chart" id="chartdiv"></div>
-
-<!-- Chart code -->
+        <div class="page-404">
+            <div class="page-404__bg" style="background-image: url('static/assets/images/sea.png')">
+            </div>
+            <div class="page-404__content page-404__content--privacy">
 
 
-<!-- Resources -->
-<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/geodata/kenyaLow.js"></script>
+                </style>
 
-<script>
-
-    am5.ready(function () {
-
-        // Create root element
-        // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-        var root = am5.Root.new("chartdiv");
-
-        // Set themes
-        // https://www.amcharts.com/docs/v5/concepts/themes/
-        root.setThemes([
-            am5themes_Animated.new(root)
-        ]);
-
-        // Create the map chart
-        // https://www.amcharts.com/docs/v5/charts/map-chart/
-        var chart = root.container.children.push(
-            am5map.MapChart.new(root, {
-                panX: "rotateX",
-                panY: "translateY",
-                projection: am5map.geoMercator()
-            })
-        );
-
-        var cont = chart.children.push(
-            am5.Container.new(root, {
-                layout: root.horizontalLayout,
-                x: 20,
-                y: 40
-            })
-        );
-
-        // Create main polygon series for countries
-        // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
-        var polygonSeries = chart.series.push(
-            am5map.MapPolygonSeries.new(root, {
-                geoJSON: am5geodata_kenyaLow
-            })
-        );
-
-        // Create line series for trajectory lines
-        // https://www.amcharts.com/docs/v5/charts/map-chart/map-line-series/
-        var lineSeries = chart.series.push(am5map.MapLineSeries.new(root, {}));
-        lineSeries.mapLines.template.setAll({
-            stroke: root.interfaceColors.get("alternativeBackground"),
-            strokeOpacity: 0.3
-        });
-
-        // Create point series for markers
-        // https://www.amcharts.com/docs/v5/charts/map-chart/map-point-series/
-        var pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
-        var colorset = am5.ColorSet.new(root, {});
-
-        pointSeries.bullets.push(function () {
-            var container = am5.Container.new(root, {});
-
-            var circle = container.children.push(
-                am5.Circle.new(root, {
-                    radius: 4,
-                    tooltipY: 0,
-                    fill: colorset.next(),
-                    strokeOpacity: 0,
-                    tooltipText: "{title}"
-                })
-            );
-
-            var circle2 = container.children.push(
-                am5.Circle.new(root, {
-                    radius: 4,
-                    tooltipY: 0,
-                    fill: colorset.next(),
-                    strokeOpacity: 0,
-                    tooltipText: "{title}"
-                })
-            );
-
-            circle.animate({
-                key: "scale",
-                from: 1,
-                to: 5,
-                duration: 600,
-                easing: am5.ease.out(am5.ease.cubic),
-                loops: Infinity
-            });
-            circle.animate({
-                key: "opacity",
-                from: 1,
-                to: 0,
-                duration: 600,
-                easing: am5.ease.out(am5.ease.cubic),
-                loops: Infinity
-            });
-
-            return am5.Bullet.new(root, {
-                sprite: container
-            });
-        });
-
-        var cities = [
-            {
-                title: "Amira River Project",
-                latitude: 1.2921,
-                longitude: 36.8219
-            },
-            {
-                title: "Tana River Project",
-                latitude: 1.7488,
-                longitude: 40.0586
-            },
-            {
-                title: "Pris River Project",
-                latitude: 48.8567,
-                longitude: 1.7488
-            },
-            {
-                title: "Mara River Dam Project",
-                latitude: 0.0236,
-                longitude: 37.9062
-            },
-            {
-                title: "Moscow",
-                latitude: 55.7558,
-                longitude: 37.6176
-            },
-            {
-                title: "Madrid",
-                latitude: 40.4167,
-                longitude: -3.7033
-            },
-            {
-                title: "London",
-                latitude: 51.5002,
-                longitude: -0.1262,
-                url: "http://www.google.co.uk"
-            },
-            {
-                title: "Peking",
-                latitude: 39.9056,
-                longitude: 116.3958
-            },
-            {
-                title: "New Delhi",
-                latitude: 28.6353,
-                longitude: 77.225
-            },
-            {
-                title: "Tokyo",
-                latitude: 35.6785,
-                longitude: 139.6823,
-                url: "http://www.google.co.jp"
-            },
-            {
-                title: "Ankara",
-                latitude: 39.9439,
-                longitude: 32.856
-            },
-            {
-                title: "Buenos Aires",
-                latitude: -34.6118,
-                longitude: -58.4173
-            },
-            {
-                title: "Brasilia",
-                latitude: -15.7801,
-                longitude: -47.9292
-            },
-            {
-                title: "Ottawa",
-                latitude: 45.4235,
-                longitude: -75.6979
-            },
-            {
-                title: "Washington",
-                latitude: 38.8921,
-                longitude: -77.0241
-            },
-            {
-                title: "Kinshasa",
-                latitude: -4.3369,
-                longitude: 15.3271
-            },
-            {
-                title: "Cairo",
-                latitude: 30.0571,
-                longitude: 31.2272
-            },
-            {
-                title: "Pretoria",
-                latitude: -25.7463,
-                longitude: 28.1876
-            }
-        ];
-
-        for (var i = 0; i < cities.length; i++) {
-            var city = cities[i];
-            addCity(city.longitude, city.latitude, city.title);
-        }
-
-        function addCity(longitude, latitude, title) {
-            pointSeries.data.push({
-                geometry: { type: "Point", coordinates: [longitude, latitude] },
-                title: title
-            });
-        }
-
-        // Make stuff animate on load
-        chart.appear(1000, 100);
-
-
-    }); // end am5.ready()
-        // am5.ready(function () {
-
-        //     // Create root
-        //     var root = am5.Root.new("chartdiv");
-
-        //     // Set themes
-        //     root.setThemes([
-        //         am5themes_Animated.new(root)
-        //     ]);
-
-        //     // Create chart
-        //     var chart = root.container.children.push(am5map.MapChart.new(root, {
-        //         panX: "translateX",
-        //         panY: "translateY",
-        //         //   projection: am5map.geoAlbersUsa(),
-        //         layout: root.horizontalLayout
-        //     }));
-
-        //     // Create point series for markers
-        //     // https://www.amcharts.com/docs/v5/charts/map-chart/map-point-series/
-        //     let pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
-        //     let colorset = am5.ColorSet.new(root, {});
-
-        //     pointSeries.bullets.push(function () {
-        //         let container = am5.Container.new(root, {});
-        //         console.log("hapo")
-        //         let circle = container.children.push(
-        //             am5.Circle.new(root, {
-        //                 radius: 4,
-        //                 tooltipY: 0,
-        //                 fill: colorset.next(),
-        //                 strokeOpacity: 0,
-        //                 tooltipText: "title"
-        //             })
-        //         );
-
-        //         let circle2 = container.children.push(
-        //             am5.Circle.new(root, {
-        //                 radius: 4,
-        //                 tooltipY: 0,
-        //                 fill: colorset.next(),
-        //                 strokeOpacity: 0,
-        //                 tooltipText: "title"
-        //             })
-        //         );
-
-        //         circle.animate({
-        //             key: "scale",
-        //             from: 1,
-        //             to: 5,
-        //             duration: 600,
-        //             easing: am5.ease.out(am5.ease.cubic),
-        //             loops: Infinity
-        //         });
-
-
-        //         circle.animate({
-        //             key: "opacity",
-        //             from: 1,
-        //             to: 0,
-        //             duration: 600,
-        //             easing: am5.ease.out(am5.ease.cubic),
-        //             loops: Infinity
-        //         });
-
-        //         return am5.Bullet.new(root, {
-        //             sprite: container
-        //         });
-        //     });
+                <div id="chartdiv"></div>
 
 
 
-        //     // Create polygon series
-        //     var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
-        //         geoJSON: am5geodata_kenyaLow,
-        //         valueField: "coordinates",
-        //         calculateAggregates: true
-        //     }));
-        //     // console.log("name ?", {name})
-
-        //     polygonSeries.mapPolygons.template.setAll({
-        //         tooltipText: "{name}: {coordinates}"
-        //     });
-
-        //     polygonSeries.set("heatRules", [{
-        //         target: polygonSeries.mapPolygons.template,
-        //         dataField: "coordinates",
-        //         min: am5.color(0xff621f),
-        //         max: am5.color(0x661f00),
-        //         key: "fill"
-        //     }]);
-
-        //     polygonSeries.mapPolygons.template.events.on("pointerover", function (ev) {
-        //         heatLegend.showValue(ev.target.dataItem.get("coordinates"));
-        //     });
-
-        //     var counties = [
-        //         {
-
-        //             latitude: 1.292,
-        //             longitude: 36.821,
-
-        //         }]
-
-        //     for (var i = 0; i < counties.length; i++) {
-        //         var city = counties[i];
-        //         //   console.log(city);
-        //         addCity(city.longitude, city.latitude, city.title);
-        //     }
-
-        //     function addCity(longitude, latitude, title) {
-        //         console.log("lat is", latitude);
-        //         console.log("long is", longitude);
-        //         console.log("title is", title);
-        //         pointSeries.data.push({
-        //             geometry: { type: "Point", coordinates: [longitude, latitude] },
-        //             title: title
-        //         });
-        //     }
+                <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+                <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+                <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+                <script src="https://cdn.amcharts.com/lib/5/geodata/kenyaLow.js"></script>
+                <script>
 
 
-        //     var heatLegend = chart.children.push(am5.HeatLegend.new(root, {
-        //         orientation: "vertical",
-        //         startColor: am5.color(0xff621f),
-        //         endColor: am5.color(0x661f00),
-        //         startText: "Planned",
-        //         endText: "Ongoing",
-        //         stepCount: 2,
-        //         //   useGraphSettings: true
-        //     }));
+                    am5.ready(function () {
 
-        //     heatLegend.startLabel.setAll({
-        //         fontSize: 12,
-        //         fill: heatLegend.get("startColor")
-        //     });
+                        // Create root element
+                        // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                        var root = am5.Root.new("chartdiv");
 
-        //     heatLegend.endLabel.setAll({
-        //         fontSize: 12,
-        //         fill: heatLegend.get("endColor")
-        //     });
+                        // Set themes
+                        // https://www.amcharts.com/docs/v5/concepts/themes/
+                        root.setThemes([
+                            am5themes_Animated.new(root)
+                        ]);
 
-        //     // change this to template when possible
-        //     // polygonSeries.events.on("datavalidated", function () {
-        //     //     heatLegend.set("startValue", polygonSeries.getPrivate("valueLow"));
-        //     //     heatLegend.set("endValue", polygonSeries.getPrivate("valueHigh"));
-        //     // });
+                        // Create the map chart
+                        // https://www.amcharts.com/docs/v5/charts/map-chart/
+                        var chart = root.container.children.push(
+                            am5map.MapChart.new(root, {
+                                panX: "none",
+                                panY: "none",
+                                projection: am5map.geoMercator(),
+                            })
+                        );
 
-        // }); // end am5.ready() 
-</script>
+                        var cont = chart.children.push(
+                            am5.Container.new(root, {
+                                layout: root.horizontalLayout,
+                                x: 20,
+                                y: 40,
+
+                            })
+                        );
+
+                        // Create main polygon series for countries
+                        // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
+                        var polygonSeries = chart.series.push(
+                            am5map.MapPolygonSeries.new(root, {
+                                geoJSON: am5geodata_kenyaLow,
+                            })
+                        );
+
+
+                        polygonSeries.mapPolygons.template.setAll({
+                            tooltipText: "{name} {value}",
+                        });
+
+
+                        // Create point series for markers
+                        // https://www.amcharts.com/docs/v5/charts/map-chart/map-point-series/
+                        var pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
+                        var colorset = am5.ColorSet.new(root, {});
+
+
+                        pointSeries.bullets.push(function () {
+                            var container = am5.Container.new(root, {});
+
+                            var circle = container.children.push(
+                                am5.Circle.new(root, {
+                                    radius: 4,
+                                    tooltipY: 0,
+                                    fill: colorset.next(),
+                                    strokeOpacity: 0,
+                                    tooltipText: "{title}",
+                                })
+                            );
+
+                            var circle2 = container.children.push(
+                                am5.Circle.new(root, {
+                                    radius: 4,
+                                    tooltipY: 0,
+                                    fill: colorset.next(),
+                                    strokeOpacity: 0,
+                                    tooltipText: "{title}",
+                                })
+                            );
+
+                            circle.animate({
+                                key: "scale",
+                                from: 1,
+                                to: 5,
+                                duration: 600,
+                                easing: am5.ease.out(am5.ease.cubic),
+                                loops: Infinity
+                            });
+                            circle.animate({
+                                key: "opacity",
+                                from: 1,
+                                to: 0,
+                                duration: 600,
+                                easing: am5.ease.out(am5.ease.cubic),
+                                loops: Infinity
+                            });
+
+                            return am5.Bullet.new(root, {
+                                sprite: container
+                            });
+                        });
+
+
+                        var cities = [
+                            {
+                                title: "Mamase Sustainable Water Initiative:.....",
+                                latitude: 1.2921,
+                                longitude: 36.8219
+                            },
+                            {
+                                title: "....",
+                                latitude: 1.7488,
+                                longitude: 40.0586
+                            },
+                            {
+                                title: "....",
+                                latitude: 0.0236,
+                                longitude: 37.9062
+                            },
+
+                        ];
+
+                        for (var i = 0; i < cities.length; i++) {
+                            var city = cities[i];
+                            addCity(city.longitude, city.latitude, city.title);
+                        }
+
+                        function addCity(longitude, latitude, title) {
+                            pointSeries.data.push({
+                                geometry: { type: "Point", coordinates: [longitude, latitude] },
+                                title: title
+                            });
+                        }
+
+                        // Make stuff animate on load
+                        // chart.appear(1000, 100);
+                        // chart.tooltipText.label.maxWidth = 40;
+                        // chart.tooltipText.label.wrap = true;
+                        // chart.zoomControl = new am5maps.ZoomControl();
+
+
+                    });// end am5.ready()
+
+
+                </script>
+            </div>
+        </div>
+    </main><!-- #main -->
+
+
+</div><!-- #content -->
+
 {% endblock %}
 
 {% block myotherjs %}
