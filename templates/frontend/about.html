@@ -1,0 +1,263 @@
+{% extends "frontend/layout/base_other.html" %}
+
+{% block content %}
+
+<style>
+    html {
+        font-size: 10px;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        font-size: 1.6rem;
+
+    }
+
+    section {
+        min-height: 800px;
+        padding: em;
+    }
+
+    section.head {
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    section.test1 .boxes .box {
+        opacity: 0.7;
+        font-weight: bold;
+    }
+
+    section.head .title {
+        font-size: 4rem;
+        color: white;
+    }
+
+    section:nth-child(even) {}
+
+    .boxes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box {
+        width: 40%;
+        min-height: 50px;
+        margin-bottom: 5em;
+        padding: 2em;
+        /* background: rgb(8, 128, 78); */
+        background: #001343;
+        border-radius: 5px;
+        /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px/; */
+        margin-left: 60px;
+        margin-right: 60px;
+        box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+    }
+
+    .box:nth-child(even) {
+        margin-left: auto;
+    }
+
+    .box p {
+        margin: 0;
+        color: #fff;
+        word-break: break-word;
+        opacity: 1 !important;
+    }
+
+    .code {
+        font-family: monospace;
+        font-size: 1.4rem;
+        line-height: 1.4;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .fixedimage {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        position: fixed;
+        z-index: -1;
+        background-image: url('https://images.unsplash.com/photo-1592623352801-6c507aaf7987?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+<div class="fixedimage"></div>
+
+<section style="margin-top: 80px;" class="head">
+    <p class="title">About the Water Resources Authority (WRA)</p>
+</section>
+
+<section class="test1">
+    <div class="boxes">
+        <div class="box">
+            <p>Water Resources Authority (WRA) is a state corporation established under Section 11 of the Water
+                Act, 2016. it is mandated through delegated Authority on behalf of the National government to
+                safeguard the right to clean water by ensuring that there is proper regulation of the management
+                and use of water resources, in order to ensure sufficient water for everyone now and in the
+                future.However, the Authority has been in existence for 12 years following its establishment
+                under the Water Act, 2002 as Water Resources Management Authority (WRMA).</p>
+        </div>
+        <div class="box">
+            <p>Our approach as an organization in safeguarding the resource is entrenched in the Country’s Big
+                4 development agenda, Vision 2030 strategic objective on water and sanitation and the SDG 6 all
+                these agenda’s and objectives aim to increase water resources availability for multipurpose use
+                but also improve the quality and sustainability of water resources.</p>
+        </div>
+        <div class="box">
+            <p style="text-decoration: underline; color: #87CEFA;">Our Vision</p><br><br>
+            <p>To be an exemplary regulator of water resources management and use</p>
+        </div>
+        <div class="box">
+            <p style="text-decoration: underline; color: #87CEFA;">Our Mission</p><br><br>
+            <p>To effectively regulate the management of water resources in partnership with stakeholders</p>
+        </div>
+        <div class="box">
+            <p style="text-decoration: underline; color: #87CEFA;">Our Slogan</p><br><br>
+            <p>Accounting For Every Drop!</p>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.7.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.7.0/dist/ScrollTrigger.min.js"></script>
+<script>
+    /* text split */
+    for (const p of document.querySelectorAll('section .box p')) {
+        let output = '';
+        const content = p.innerHTML.replace(/<br\s*\/?>/gi, '\n');
+        for (var str of content.split('')) {
+            output += (str.match(/\r\n|\r|\n/g)) ? '<br>' : '<span>' + str + '</span>';
+        }
+        p.innerHTML = output;
+    }
+
+    /* test1 */
+    (() => {
+        const q = gsap.utils.selector('.test1');
+        q('.box').forEach((box) => {
+            // timeline
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: box,
+                    start: 'top bottom-=50',
+                    toggleActions: 'restart none none none', // onEnter, onLeave, onEnterBack, onLeaveBack
+                    onLeaveBack: progress => { // Turn off the balloon when scrolling back.
+                        gsap.to(progress.trigger, {
+                            opacity: 0,
+                            y: 20,
+                        })
+                    },
+                    //markers: true
+                }
+            })
+                // box
+                .from(box, {
+                    opacity: 0,
+                    y: 20,
+                })
+                // text
+                .from(gsap.utils.toArray('span', box), {
+                    opacity: 0,
+                    duration: 0.02,
+                    stagger: 0.005,
+                }, '<+0.3');
+
+        });
+    })();
+
+
+    /* test2 */
+    (() => {
+        const q = gsap.utils.selector('.test2');
+        q('.box').forEach((box, index) => {
+            // box
+            gsap.from(box, {
+                opacity: 0,
+                y: 20,
+                scrollTrigger: {
+                    trigger: box,
+                    start: 'top bottom-=50',
+                    toggleActions: 'restart none none none', // onEnter, onLeave, onEnterBack, onLeaveBack
+                    onLeaveBack: progress => { // Turn off the balloon when scrolling back.
+                        gsap.to(progress.trigger, {
+                            opacity: 0,
+                            y: 20,
+                        })
+                    },
+                    //markers: true
+                }
+            });
+
+            // text
+            const text = gsap.utils.toArray('span', box);
+            gsap.from(text, {
+                opacity: 0,
+                stagger: 1,
+                duration: 0.01,
+                scrollTrigger: {
+                    trigger: box,
+                    scrub: 0.5,
+                    ease: 'none',
+                    start: 'top bottom-=50',
+                    end: 'bottom bottom',
+                    //id: 'box-text-'+ index,
+                    //markers: true,
+                },
+            });
+        });
+    })();
+
+
+    /* test2 anti-pattern? */
+    (() => {
+        const q = gsap.utils.selector('.test2-anti');
+        q('.box').forEach((box) => {
+            // timeline
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: box,
+                    start: 'top bottom-=50',
+                    toggleActions: 'restart none none none', // onEnter, onLeave, onEnterBack, onLeaveBack
+                    onLeaveBack: progress => { // Turn off the balloon when scrolling back.
+                        gsap.to(progress.trigger, {
+                            opacity: 0,
+                            y: 20,
+                        })
+                    },
+                    //markers: true
+                }
+            })
+                // box
+                .from(box, {
+                    opacity: 0,
+                    y: 20,
+                })
+                // text
+                .from(gsap.utils.toArray('span', box), {
+                    opacity: 0,
+                    stagger: 1,
+                    duration: 0.01,
+                    scrollTrigger: { // anti-pattern?
+                        trigger: box,
+                        scrub: 0.8,
+                        ease: 'none',
+                        start: 'top bottom',
+                        end: 'bottom bottom',
+                    },
+                });
+        });
+    })();
+</script>
+
+{% endblock %}

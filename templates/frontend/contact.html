@@ -1,0 +1,445 @@
+{% extends "frontend/layout/base_other.html" %} {% block myotherstyle %}
+
+<style></style>
+
+{% endblock %} {% block content %}
+
+<style>
+    .page-404__content {
+        z-index: 1;
+        color: #fff;
+        max-width: 90vw;
+        width: 100%;
+        padding-top: 14%;
+        animation: 0.3s fadeIn404;
+    }
+</style>
+<style>
+    .container-flexer {
+        display: flex;
+        justify-content: space-evenly;
+        /* background-color: sandybrown; */
+    }
+
+    .container h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin: 0 0 2em;
+        /* color: black; */
+    }
+
+    .container {
+        position: relative;
+        max-width: 50%;
+        /* margin: 0rem auto; */
+        background: transparent;
+        width: 100%;
+        padding: 3rem 5rem 0;
+        border-radius: 1px;
+    }
+
+    .container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: 9px 11px 22px -1px rgba(240,46,170,0.6);
+-webkit-box-shadow: 9px 11px 22px -1px rgba(240,46,170,0.6);
+-moz-box-shadow: 9px 11px 22px -1px rgba(240,46,170,0.6);
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-transition: -webkit-transform 0.28s ease-in-out;
+        transition: -webkit-transform 0.28s ease-in-out;
+        transition: transform 0.28s ease-in-out;
+        transition: transform 0.28s ease-in-out, -webkit-transform 0.28s ease-in-out;
+        z-index: -1;
+
+    }
+    .container-tabs{
+        display: flex;
+flex-direction: column;
+justify-content: space-between;
+
+    }
+
+    .tabs {
+        background: transparent;
+        box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        transform: scale(0.98);
+        -webkit-transition: -webkit-transform 0.28s ease-in-out;
+        transition: -webkit-transform 0.28s ease-in-out;
+        transition: transform 0.28s ease-in-out;
+        transition: transform 0.28s ease-in-out, -webkit-transform 0.28s ease-in-out;
+
+        max-width: 20rem;
+        /* max-height: 10em; */
+        padding: 1em;
+
+        /* line-height: 15px; */
+        font-size: 14px;
+       
+  
+    }
+    .tabs:hover{
+        cursor: pointer !important;
+        transform: scale(1);
+    }
+    .tabs p{
+        margin-bottom: 0px;
+    }
+    .tabs h3{
+        margin-bottom: 2px;
+    }
+    .container:hover::before {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    .button-container {
+        text-align: center;
+    }
+
+    fieldset {
+        margin: 0 0 3rem;
+        padding: 0;
+        border: none;
+    }
+
+    .form-radio,
+    .form-group {
+        position: relative;
+        margin-top: 2.25rem;
+        margin-bottom: 2.25rem;
+    }
+
+    .form-inline>.form-group,
+    .form-inline>.btn {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+
+    .form-help {
+        margin-top: 0.125rem;
+        margin-left: 0.125rem;
+        color: #b3b3b3;
+        font-size: 0.8rem;
+    }
+
+    .checkbox .form-help,
+    .form-radio .form-help,
+    .form-group .form-help {
+        position: absolute;
+        width: 100%;
+    }
+
+    .checkbox .form-help {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .form-radio .form-help {
+        padding-top: 0.25rem;
+        margin-top: -1rem;
+    }
+
+    .form-group input {
+        height: 1.9rem;
+    }
+
+    .form-group textarea {
+        /* resize: ; */
+    }
+
+    .form-group select {
+        width: 100%;
+        font-size: 1rem;
+        height: 1.6rem;
+        padding: 0.125rem 0.125rem 0.0625rem;
+        background: none;
+        border: none;
+        line-height: 1.6;
+        box-shadow: none;
+    }
+
+    .form-group .control-label {
+        position: absolute;
+        top: 0.25rem;
+        pointer-events: none;
+        padding-left: 0.125rem;
+        z-index: 1;
+        color: #b3b3b3;
+        font-size: 1rem;
+        font-weight: normal;
+        -webkit-transition: all 0.28s ease;
+        transition: all 0.28s ease;
+    }
+
+    .form-group .bar {
+        position: relative;
+        border-bottom: 0.0625rem solid #999;
+        display: block;
+    }
+
+    .form-group .bar::before {
+        content: '';
+        height: 0.125rem;
+        width: 0;
+        left: 50%;
+        bottom: -0.0625rem;
+        position: absolute;
+        background: #337ab7;
+        -webkit-transition: left 0.28s ease, width 0.28s ease;
+        transition: left 0.28s ease, width 0.28s ease;
+        z-index: 2;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        display: block;
+        background: none;
+        padding: 0.125rem 0.125rem 0.0625rem;
+        font-size: 1rem;
+        border-width: 0;
+        border-color: transparent;
+        line-height: 1.9;
+        width: 100%;
+        color: transparent;
+        -webkit-transition: all 0.28s ease;
+        transition: all 0.28s ease;
+        box-shadow: none;
+    }
+
+    .form-group input[type="file"] {
+        line-height: 1;
+    }
+
+    .form-group input[type="file"]~.bar {
+        display: none;
+    }
+
+    .form-group select,
+    .form-group input:focus,
+    .form-group input:valid,
+    .form-group input.form-file,
+    .form-group input.has-value,
+    .form-group textarea:focus,
+    .form-group textarea:valid,
+    .form-group textarea.form-file,
+    .form-group textarea.has-value {
+        color: white;
+    }
+
+    .form-group select~.control-label,
+    .form-group input:focus~.control-label,
+    .form-group input:valid~.control-label,
+    .form-group input.form-file~.control-label,
+    .form-group input.has-value~.control-label,
+    .form-group textarea:focus~.control-label,
+    .form-group textarea:valid~.control-label,
+    .form-group textarea.form-file~.control-label,
+    .form-group textarea.has-value~.control-label {
+        font-size: 0.8rem;
+        color: gray;
+        top: -1rem;
+        left: 0;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus,
+    .form-group textarea:focus {
+        outline: none;
+    }
+
+    .form-group select:focus~.control-label,
+    .form-group input:focus~.control-label,
+    .form-group textarea:focus~.control-label {
+        color: #337ab7;
+    }
+
+    .form-group select:focus~.bar::before,
+    .form-group input:focus~.bar::before,
+    .form-group textarea:focus~.bar::before {
+        width: 100%;
+        left: 0;
+    }
+
+    .has-error .legend.legend,
+    .has-error.form-group .control-label.control-label {
+        color: #d9534f;
+    }
+
+    .has-error.form-group .form-help,
+    .has-error.form-group .helper,
+    .has-error.checkbox .form-help,
+    .has-error.checkbox .helper,
+    .has-error.radio .form-help,
+    .has-error.radio .helper,
+    .has-error.form-radio .form-help,
+    .has-error.form-radio .helper {
+        color: #d9534f;
+    }
+
+    .has-error .bar::before {
+        background: #d9534f;
+        left: 0;
+        width: 100%;
+    }
+
+    .button {
+        position: relative;
+        background: currentColor;
+        border: 1px solid currentColor;
+        font-size: 1.1rem;
+        color: #4f93ce;
+        margin: 3rem 0;
+        padding: 0.75rem 3rem;
+        cursor: pointer;
+        -webkit-transition: background-color 0.28s ease, color 0.28s ease, box-shadow 0.28s ease;
+        transition: background-color 0.28s ease, color 0.28s ease, box-shadow 0.28s ease;
+        overflow: hidden;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    .button span {
+        color: #fff;
+        position: relative;
+        z-index: 1;
+    }
+
+    .button::before {
+        content: '';
+        position: absolute;
+        background: #071017;
+        border: 50vh solid #1d4567;
+        width: 30vh;
+        height: 30vh;
+        border-radius: 50%;
+        display: block;
+        top: 50%;
+        left: 50%;
+        z-index: 0;
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    .button:hover {
+        color: #337ab7;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:active::before,
+    .button:focus::before {
+        -webkit-transition: opacity 0.28s ease 0.364s, -webkit-transform 1.12s ease;
+        transition: opacity 0.28s ease 0.364s, -webkit-transform 1.12s ease;
+        transition: transform 1.12s ease, opacity 0.28s ease 0.364s;
+        transition: transform 1.12s ease, opacity 0.28s ease 0.364s, -webkit-transform 1.12s ease;
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+
+    .button:focus {
+        outline: none;
+    }
+</style>
+
+<div id="content" class="site-content | js-site-content">
+    <main id="main" class="site-main site-main--404">
+        <div class="page-404">
+            <div class="page-404__bg" style="
+          background-image: url('static/assets/images/sea.png');"></div>
+            <div class="page-404__content page-404__content--privacy">
+                <h1 class="page-404__heading">Got any Questions?</h1>
+                <div class="page-404__text">
+
+
+                    <div class="container-flexer">
+
+
+                        <div class=" container ">
+                            <form>
+                                <h1>Leave as a message</h1>
+
+                                <div class="form-group ">
+                                    <input type="text " required="required " />
+                                    <label for="input " class="control-label ">Full Name</label><i class="bar "></i>
+                                </div>
+
+                                <div class="form-group ">
+                                    <input type="email " required="required " />
+                                    <label for="inputemail " class="control-label ">Email</label><i class="bar "></i>
+                                </div>
+
+                                <div class="form-group ">
+                                    <textarea required="required "></textarea>
+                                    <label for="textarea " class="control-label ">Message</label><i class="bar "></i>
+                                </div>
+
+
+                                <div class="button-container ">
+                                    <button type="button " class="button "><span>Submit</span></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class=" container-tabs">
+                            <div class="tabs">
+                                <h3>OUR ADDRESS</h3>
+                                <p>NHIF Building, Wing B, 9th Floor</p>
+                                <p>P.O. Box 45250 00100, Ngong Road,
+
+                                    Nairobi – Kenya</p>
+                            </div>
+                            <div class="tabs"><h3>
+                                PHONE NUMBER
+                            </h3>
+                            <p>0202732291</p>
+                            <p>2729048</p>
+                            <p>Emergency Hotline: 0700 056472
+
+                            </p>
+                            </div>
+                         
+                            <div class="tabs">
+                                <h3>EMAIL ADDRESS</h3>
+                                <p> info@wra.go.ke</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class=" " style="margin-top: 2em; ">
+
+                    <h1 class="page-404__heading " style="text-align: center ; margin-bottom: 1em; ">Give us a visit.
+                    </h1>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7982726639775!2d36.81061951475396!3d-1.2956286990550154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11a75a8e9539%3A0xe111a8d7de6dead!2sKenya%20Water%20Towers%20Agency%20(NHIF%20Building%2C%2015th%20Floor)!5e0!3m2!1sen!2ske!4v1643538937496!5m2!1sen!2ske "
+                        width="100% " height="400 " style="border:0; " allowfullscreen=" " loading="lazy "></iframe>
+                </div>
+
+            </div>
+
+            </section>
+
+
+        </div>
+
+</div>
+
+</div>
+</main>
+<!-- #main -->
+</div>
+<!-- #content -->
+
+<!--End of Tawk.to Script-->
+
+{% endblock %} {% block myotherjs %}
+<script></script>
+{% endblock %}
+
+<!--Start of Tawk.to Script-->
