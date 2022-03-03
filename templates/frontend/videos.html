@@ -1,0 +1,89 @@
+{% extends "frontend/layout/base_other.html" %}
+
+
+{% block myotherstyle %}
+
+<style>
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+<style>
+
+    /* taking care of responsive layout */
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        /* margin: 0.5rem; */
+        margin-top: 10em;
+        margin-bottom: 5em;
+    }
+z
+    .single-video {
+        width: 36rem;
+        flex-grow: 1;
+        margin: 1px;
+
+    }
+
+    /* taking care of the video aspect-ratio */
+    figure {
+        position: relative;
+        padding: 0 0 56.25% 0;
+    }
+
+    figure iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px black solid;
+    }
+
+    @media (max-width: 1000px) {
+        .gallery {
+
+            margin-top: 10em;
+            margin-bottom: 10em;
+
+        }
+
+    }
+</style>
+
+<div class="container gallery">
+    <div class="single-video">
+        <figure>
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/jTfYOKue_d4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </figure>
+    </div>
+    <div class="single-video">
+        <figure>
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/emEG-3WVymg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </figure>
+    </div>
+    <div class="single-video">
+        <figure>
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/8aPHHz68AZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </figure>
+    </div>
+    <div class="single-video">
+        <figure>
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/BW5JYOE9w5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </figure>
+    </div>
+    <div class="single-video">
+        <figure>
+            <iframe width="1280" height="720" src="https://www.youtube.com/embed/BW5JYOE9w5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </figure>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block myotherjs %}
+
+{% endblock %}

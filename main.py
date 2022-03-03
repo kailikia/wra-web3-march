@@ -33,6 +33,35 @@ def careers():
 def publications():
     return render_template("frontend/publications.html")
 
+@app.route("/whatwedo")
+def whatwedo():
+    return render_template("frontend/whatwedo.html")
+
+@app.route("/boardmembers")
+def boardmembers():
+    return render_template("frontend/boardmember.html")
+
+@app.route("/topmanagement")
+def topmanagement():
+    return render_template("frontend/topmanagement.html")
+
+@app.route("/regionaloffices")
+def regionaloffices():
+    return render_template("frontend/regionaloffices.html")
+
+@app.route("/serviceCharter")
+def serviceCharter():
+    return render_template("frontend/serviceCharter.html")
+    
+@app.route("/feedback")
+def feedback():
+    return render_template("frontend/feedback.html")
+
+@app.route("/videos")
+def videos():
+    return render_template("frontend/videos.html")
+
+
 @app.route("/contact-us")
 def contact():
     return render_template("frontend/contact.html")
@@ -41,8 +70,6 @@ def contact():
 ## End Frontend Routes
 
 ## Backend Routes
-
-
 
 ## Backend Roues
 

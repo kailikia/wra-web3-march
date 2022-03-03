@@ -1,1594 +1,1302 @@
-<!doctype html>
-<html lang="sr-RS" class="smooth">
+{% extends "frontend/layout/base_other.html" %}
 
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+{% block myotherstyle %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
+<style>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="static/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="256x256" href="/static/assets/images/wra-logo.png">
-    <!-- <link rel="icon" type="image/png" sizes="192x192" href="static/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="150x150" href="static/favicon-150x150.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png"> -->
+</style>
 
+{% endblock %}
 
-    <link rel="preload" href="static/assets/fonts/Gilroy-Extrabold.html" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="static/assets/fonts/Gilroy-RegularItalic.html" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="static/assets/fonts/Gilroy-Medium.html" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="static/assets/fonts/Gilroy-Regular.html" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="static/assets/fonts/Cream-Regular.html" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="static/assets/fonts/Gilroy-Bold.html" as="font" type="font/woff2" crossorigin>
-    <link rel="prefetch" href="static/assets/images/sea.webp" as="font" type="font/woff2" crossorigin>
-    <link rel="manifest" href="static/site.html">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+{% block content %}
 
-    <title>Water Resources Authority</title>
-    <meta name="description" content="." />
-    <link rel="canonical" href="index.html" />
-    <meta property="og:locale" content="sr_RS" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="e." />
-    <meta property="og:url" content="index.html" />
-    <meta property="og:site_name" content="Jazak" />
-    <meta property="article:modified_time" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <link rel='dns-prefetch' href='http://www.google.com/' />
-    <link rel='dns-prefetch' href='http://s.w.org/' />
-    <link rel='stylesheet' id='contact-form-7-css'
-        href='static/plugins/contact-form-7/includes/css/styles5697.css?ver=5.5.3' type='text/css' media='all' />
-    <link rel="stylesheet" id="Jazak-style-css" href="../static/style.css" type="text/css" media="all">
-    <link rel='stylesheet' id='moove_gdpr_frontend-css'
-        href='static/plugins/gdpr-cookie-compliance/dist/styles/gdpr-main-nf83b6.css?ver=4.6.2' type='text/css'
-        media='all' />
-    <style id="moove_gdpr_frontend-inline-css" type="text/css">
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main h3.tab-title,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main span.tab-title,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content .moove-gdpr-branding-cnt a,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,
-        #moove_gdpr_cookie_modal .cookie-switch .cookie-slider:after,
-        #moove_gdpr_cookie_modal .cookie-switch .slider:after,
-        #moove_gdpr_cookie_modal .switch .cookie-slider:after,
-        #moove_gdpr_cookie_modal .switch .slider:after,
-        #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p,
-        #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p a,
-        #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,
-        #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h1,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h2,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h3,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h4,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h5,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h6,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-modal-title .tab-title,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main h3.tab-title,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main span.tab-title,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-branding-cnt a {
-            font-weight: inherit
-        }
-
-        #moove_gdpr_cookie_modal,
-        #moove_gdpr_cookie_info_bar,
-        .gdpr_cookie_settings_shortcode_content {
-            font-family: Gilroy, sans-serif
-        }
-
-        #moove_gdpr_save_popup_settings_button {
-            background-color: #373737;
-            color: #fff
-        }
-
-        #moove_gdpr_save_popup_settings_button:hover {
-            background-color: #000
-        }
-
-        #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,
-        #moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton {
-            background-color: #0c4da2
-        }
-
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,
-        .gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green {
-            background-color: #0c4da2;
-            border-color: #0c4da2
-        }
-
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton:hover,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton:hover,
-        .gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green:hover {
-            background-color: #fff;
-            color: #0c4da2
-        }
-
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon {
-            background-color: #0c4da2;
-            border: 1px solid #0c4da2
-        }
-
-        #moove_gdpr_cookie_info_bar span.change-settings-button.focus-g {
-            -webkit-box-shadow: 0 0 1px 3px #0c4da2;
-            -moz-box-shadow: 0 0 1px 3px #0c4da2;
-            box-shadow: 0 0 1px 3px #0c4da2
-        }
-
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i:hover,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon:hover,
-        #moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button {
-            color: #0c4da2
-        }
-
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a span.gdpr-icon,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button span.gdpr-icon {
-            color: inherit
-        }
-
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li:hover a,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li:hover button {
-            color: #000
-        }
-
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a span.gdpr-icon,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button span.gdpr-icon {
-            color: inherit
-        }
-
-        #moove_gdpr_cookie_modal .gdpr-acc-link {
-            line-height: 0;
-            font-size: 0;
-            color: transparent;
-            position: absolute
-        }
-
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close:hover i,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button i,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a i,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content a:hover,
-        #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:hover,
-        #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:hover,
-        #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:hover,
-        #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:hover,
-        #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button:hover,
-        #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:hover,
-        #moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button,
-        #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.focus-g,
-        #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.focus-g,
-        #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.focus-g,
-        #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.focus-g,
-        #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button.focus-g,
-        #moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button.focus-g {
-            color: #0c4da2
-        }
-
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button {
-            color: #000
-        }
-
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a i,
-        #moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button i {
-            color: #000
-        }
-
-        #moove_gdpr_cookie_modal.gdpr_lightbox-hide {
-            display: none
-        }
-    </style>
-    <!-- <script type="text/javascript" async="" src="../static/recaptcha__en.js" crossorigin="anonymous"
-        integrity="sha384-S2LGmX4/CwtiRBHR9Jff17G3SCVE4jK5G1X5NkcvSGWf01pJQ9TgEi/XTLkaKO2w"></script>
-    <script async="" src="../static/fbevents.js"></script> -->
-
-    <!-- Facebook Pixel Code -->
-    <script>
-        ! function (f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '465294781493647');
-        fbq('track', 'PageView');
-    </script>
-
-    <noscript>
-        <!-- <img height="1" width="1" src="https://www.facebook.com/tr?id=465294781493647&ev=PageView
-&noscript=1" /> -->
-    </noscript>
-    <!-- End Facebook Pixel Code -->
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="../static/js"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-GDDBVL8RDJ');
-    </script>
-
-</head>
 
 <body
-    class="home page-template page-template-templates page-template-home page-template-templateshome-php page page-id-7"
-    style="" data-new-gr-c-s-check-loaded="14.1050.0" data-gr-ext-installed="">
+class="home page-template page-template-templates page-template-home page-template-templateshome-php page page-id-7"
+style="" data-new-gr-c-s-check-loaded="14.1050.0" data-gr-ext-installed="">
 
-    <div id="page" class="site loading | js-site">
-        <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
-        <!-- <script>
-            window.onbeforeunload = function () {
-                window.scrollTo(0, 0);
-            }
-        </script> -->
-        <header class="header | js-header">
-            <div class="menu | js-menu">
-                <div class="menu__bg | js-menu-bg"></div>
-                <div class="menu__inner">
-                    <div class="menu__top">
-                        <a class="menu__top-logo-link" href="/">
-                            <img style="width: 20%;" class="menu__logo | js-menu-logo image_resize"
-                                src="static/assets/images/wra-logo.png" alt="logo">
+<div id="page" class="site loading | js-site">
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+    <!-- <script>
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    </script> -->
+    <header style="display: none;" class="header | js-header">
+        <div class="menu | js-menu">
+            <div class="menu__bg | js-menu-bg"></div>
+            <div class="menu__inner">
+                <div class="menu__top">
+                    <a class="menu__top-logo-link" href="/">
+                        <img style="width: 20%;" class="menu__logo | js-menu-logo image_resize"
+                            src="static/assets/images/wra-logo.png" alt="logo">
+                    </a>
+                    <nav class="menu__nav">
+                        <ul class="menu__nav-list">
+                            <li class="menu__nav-item | js-menu-nav-item js-nav-fruska-gora" data-search="">
+                                <a href="/about-us" aria-label="About Us">
+                                    About Us
+                                </a>
+                            </li>
+
+                            <li class="menu__nav-item | js-menu-nav-item js-nav-negazirana" data-search="]">
+                                <a href="/contact" aria-label="project">
+                                    Projects
+                                </a>
+                            </li>
+                            <li class="menu__nav-item | js-menu-nav-item js-nav-vitaminska" data-search="">
+                                <a href="https://www.jazakvoda.rs/#" aria-label="Vitaminske vode">
+                                    Tenders
+                                </a>
+                            </li>
+                            <li class="menu__nav-item | js-menu-nav-item js-nav-imuno" data-search="">
+                                <a href="https://www.jazakvoda.rs" aria-label="Vitaminske vode">
+                                    Publications
+                                </a>
+                            </li>
+                            <li class="menu__nav-item | js-menu-nav-item js-nav-contact" data-search="">
+                                <a href="/contact" aria-label="Contact Us">
+                                    Careers
+                                </a>
+                            </li>
+                            <li class="menu__nav-item | js-menu-nav-item" data-search="">
+                                <a href="/contact" aria-label="Contact Us">
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li class="menu__nav-item | js-menu-nav-item" data-search="">
+                                <a href="/contact" aria-label="Contact Us">
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="menu__top-fix"></div>
+                </div>
+                <ul class="menu__icons">
+                    <li class="menu__icons-item">
+                        <a class="menu__icons-link | js-menu-nav-icon" rel="noreferrer"
+                            href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.0001 0C8.05903 0 0 8.05903 0 18.0001C0 26.9161 6.48939 34.3 14.998 35.7299V21.7554H10.6559V16.7266H14.998V13.0185C14.998 8.71608 17.6258 6.37151 21.4645 6.37151C23.3029 6.37151 24.8829 6.5085 25.3415 6.56884V11.066L22.6792 11.0673C20.592 11.0673 20.1896 12.0589 20.1896 13.5145V16.724H25.1697L24.5202 21.7528H20.1896V35.8501C29.0955 34.7662 36 27.1942 36 17.995C36 8.05903 27.941 0 18.0001 0Z"
+                                    fill="#0078b9"></path>
+                            </svg>
                         </a>
-                        <nav class="menu__nav">
-                            <ul class="menu__nav-list">
-                                <li class="menu__nav-item | js-menu-nav-item js-nav-fruska-gora" data-search="">
-                                    <a href="/about-us" aria-label="About Us">
-                                        About Us
-                                    </a>
-                                </li>
-
-                                <li class="menu__nav-item | js-menu-nav-item js-nav-negazirana" data-search="]">
-                                    <a href="/contact" aria-label="project">
-                                        Projects
-                                    </a>
-                                </li>
-                                <li class="menu__nav-item | js-menu-nav-item js-nav-vitaminska" data-search="">
-                                    <a href="https://www.jazakvoda.rs/#" aria-label="Vitaminske vode">
-                                        Tenders
-                                    </a>
-                                </li>
-                                <li class="menu__nav-item | js-menu-nav-item js-nav-imuno" data-search="">
-                                    <a href="https://www.jazakvoda.rs" aria-label="Vitaminske vode">
-                                        Publications
-                                    </a>
-                                </li>
-                                <li class="menu__nav-item | js-menu-nav-item js-nav-contact" data-search="">
-                                    <a href="/contact" aria-label="Contact Us">
-                                        Careers
-                                    </a>
-                                </li>
-                                <li class="menu__nav-item | js-menu-nav-item" data-search="">
-                                    <a href="/contact" aria-label="Contact Us">
-                                        Contact Us
-                                    </a>
-                                </li>
-                                <li class="menu__nav-item | js-menu-nav-item" data-search="">
-                                    <a href="/contact" aria-label="Contact Us">
-                                        Contact Us
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="menu__top-fix"></div>
-                    </div>
-                    <ul class="menu__icons">
-                        <li class="menu__icons-item">
-                            <a class="menu__icons-link | js-menu-nav-icon" rel="noreferrer"
-                                href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M18.0001 0C8.05903 0 0 8.05903 0 18.0001C0 26.9161 6.48939 34.3 14.998 35.7299V21.7554H10.6559V16.7266H14.998V13.0185C14.998 8.71608 17.6258 6.37151 21.4645 6.37151C23.3029 6.37151 24.8829 6.5085 25.3415 6.56884V11.066L22.6792 11.0673C20.592 11.0673 20.1896 12.0589 20.1896 13.5145V16.724H25.1697L24.5202 21.7528H20.1896V35.8501C29.0955 34.7662 36 27.1942 36 17.995C36 8.05903 27.941 0 18.0001 0Z"
-                                        fill="#0078b9"></path>
-                                </svg>
-                            </a>
-                            <a class="menu__icons-link | js-menu-nav-icon" href="" rel="noreferrer" target="_blank"
-                                aria-label="Instagram">
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M21.4453 18C21.4453 19.9028 19.9028 21.4453 18 21.4453C16.0972 21.4453 14.5547 19.9028 14.5547 18C14.5547 16.0972 16.0972 14.5547 18 14.5547C19.9028 14.5547 21.4453 16.0972 21.4453 18Z"
-                                        fill=" #0078b9"></path>
-                                    <path
-                                        d="M26.0574 11.9042C25.8918 11.4554 25.6275 11.0492 25.2842 10.7158C24.9508 10.3725 24.5448 10.1082 24.0958 9.94263C23.7316 9.80118 23.1844 9.63281 22.1767 9.58694C21.0866 9.53723 20.7598 9.52652 18 9.52652C15.24 9.52652 14.9131 9.53696 13.8233 9.58667C12.8156 9.63281 12.2682 9.80118 11.9042 9.94263C11.4552 10.1082 11.049 10.3725 10.7158 10.7158C10.3725 11.0492 10.1082 11.4552 9.94235 11.9042C9.8009 12.2684 9.63254 12.8158 9.58667 13.8235C9.53696 14.9134 9.52625 15.2402 9.52625 18.0003C9.52625 20.76 9.53696 21.0869 9.58667 22.177C9.63254 23.1847 9.8009 23.7318 9.94235 24.096C10.1082 24.5451 10.3722 24.951 10.7155 25.2845C11.049 25.6278 11.4549 25.892 11.904 26.0576C12.2682 26.1994 12.8156 26.3677 13.8233 26.4136C14.9131 26.4633 15.2397 26.4738 17.9997 26.4738C20.76 26.4738 21.0869 26.4633 22.1765 26.4136C23.1842 26.3677 23.7316 26.1994 24.0958 26.0576C24.9972 25.7099 25.7097 24.9975 26.0574 24.096C26.1988 23.7318 26.3672 23.1847 26.4133 22.177C26.463 21.0869 26.4735 20.76 26.4735 18.0003C26.4735 15.2402 26.463 14.9134 26.4133 13.8235C26.3675 12.8158 26.1991 12.2684 26.0574 11.9042V11.9042ZM18 23.3075C15.0686 23.3075 12.6922 20.9314 12.6922 18C12.6922 15.0686 15.0686 12.6925 18 12.6925C20.9312 12.6925 23.3075 15.0686 23.3075 18C23.3075 20.9314 20.9312 23.3075 18 23.3075ZM23.5173 13.723C22.8323 13.723 22.277 13.1677 22.277 12.4827C22.277 11.7977 22.8323 11.2423 23.5173 11.2423C24.2023 11.2423 24.7577 11.7977 24.7577 12.4827C24.7574 13.1677 24.2023 13.723 23.5173 13.723Z"
-                                        fill=" #0078b9"></path>
-                                    <path
-                                        d="M18 0C8.06039 0 0 8.06039 0 18C0 27.9396 8.06039 36 18 36C27.9396 36 36 27.9396 36 18C36 8.06039 27.9396 0 18 0ZM28.2736 22.2613C28.2236 23.3616 28.0486 24.1128 27.7932 24.7703C27.2563 26.1587 26.1587 27.2563 24.7703 27.7932C24.1131 28.0486 23.3616 28.2233 22.2616 28.2736C21.1594 28.3239 20.8073 28.3359 18.0003 28.3359C15.193 28.3359 14.8412 28.3239 13.7387 28.2736C12.6387 28.2233 11.8872 28.0486 11.2299 27.7932C10.54 27.5337 9.91544 27.1269 9.39908 26.6009C8.87338 26.0848 8.46661 25.46 8.20706 24.7703C7.95163 24.1131 7.77667 23.3616 7.72668 22.2616C7.67587 21.1591 7.66406 20.807 7.66406 18C7.66406 15.193 7.67587 14.8409 7.72641 13.7387C7.7764 12.6384 7.95108 11.8872 8.20651 11.2297C8.46606 10.54 8.87311 9.91516 9.39908 9.39908C9.91516 8.87311 10.54 8.46634 11.2297 8.20679C11.8872 7.95136 12.6384 7.77667 13.7387 7.72641C14.8409 7.67615 15.193 7.66406 18 7.66406C20.807 7.66406 21.1591 7.67615 22.2613 7.72668C23.3616 7.77667 24.1128 7.95135 24.7703 8.20651C25.46 8.46606 26.0848 8.87311 26.6012 9.39908C27.1269 9.91544 27.5339 10.54 27.7932 11.2297C28.0489 11.8872 28.2236 12.6384 28.2739 13.7387C28.3241 14.8409 28.3359 15.193 28.3359 18C28.3359 20.807 28.3241 21.1591 28.2736 22.2613V22.2613Z"
-                                        fill=" #0078b9"></path>
-                                </svg>
-                            </a>
-                            <a class="menu__icons-link | js-menu-nav-icon" rel="noreferrer"
-                                href="https://www.youtube.com/" target="_blank" aria-label="Youtube">
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.7581 21.3723L21.6132 18L15.7581 14.6277V21.3723Z" fill=" #0078b9">
-                                    </path>
-                                    <path
-                                        d="M18 0C8.06039 0 0 8.06039 0 18C0 27.9396 8.06039 36 18 36C27.9396 36 36 27.9396 36 18C36 8.06039 27.9396 0 18 0ZM29.2473 18.0184C29.2473 18.0184 29.2473 21.6689 28.7842 23.4292C28.5246 24.3927 27.7649 25.1524 26.8014 25.4117C25.0411 25.875 18 25.875 18 25.875C18 25.875 10.9773 25.875 9.19858 25.3932C8.23508 25.134 7.47537 24.374 7.21582 23.4105C6.75247 21.6689 6.75247 18 6.75247 18C6.75247 18 6.75247 14.3498 7.21582 12.5895C7.4751 11.626 8.25348 10.8476 9.19858 10.5883C10.9589 10.125 18 10.125 18 10.125C18 10.125 25.0411 10.125 26.8014 10.6068C27.7649 10.866 28.5246 11.626 28.7842 12.5895C29.2659 14.3498 29.2473 18.0184 29.2473 18.0184V18.0184Z"
-                                        fill=" #0078b9"></path>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                        <a class="menu__icons-link | js-menu-nav-icon" href="" rel="noreferrer" target="_blank"
+                            aria-label="Instagram">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21.4453 18C21.4453 19.9028 19.9028 21.4453 18 21.4453C16.0972 21.4453 14.5547 19.9028 14.5547 18C14.5547 16.0972 16.0972 14.5547 18 14.5547C19.9028 14.5547 21.4453 16.0972 21.4453 18Z"
+                                    fill=" #0078b9"></path>
+                                <path
+                                    d="M26.0574 11.9042C25.8918 11.4554 25.6275 11.0492 25.2842 10.7158C24.9508 10.3725 24.5448 10.1082 24.0958 9.94263C23.7316 9.80118 23.1844 9.63281 22.1767 9.58694C21.0866 9.53723 20.7598 9.52652 18 9.52652C15.24 9.52652 14.9131 9.53696 13.8233 9.58667C12.8156 9.63281 12.2682 9.80118 11.9042 9.94263C11.4552 10.1082 11.049 10.3725 10.7158 10.7158C10.3725 11.0492 10.1082 11.4552 9.94235 11.9042C9.8009 12.2684 9.63254 12.8158 9.58667 13.8235C9.53696 14.9134 9.52625 15.2402 9.52625 18.0003C9.52625 20.76 9.53696 21.0869 9.58667 22.177C9.63254 23.1847 9.8009 23.7318 9.94235 24.096C10.1082 24.5451 10.3722 24.951 10.7155 25.2845C11.049 25.6278 11.4549 25.892 11.904 26.0576C12.2682 26.1994 12.8156 26.3677 13.8233 26.4136C14.9131 26.4633 15.2397 26.4738 17.9997 26.4738C20.76 26.4738 21.0869 26.4633 22.1765 26.4136C23.1842 26.3677 23.7316 26.1994 24.0958 26.0576C24.9972 25.7099 25.7097 24.9975 26.0574 24.096C26.1988 23.7318 26.3672 23.1847 26.4133 22.177C26.463 21.0869 26.4735 20.76 26.4735 18.0003C26.4735 15.2402 26.463 14.9134 26.4133 13.8235C26.3675 12.8158 26.1991 12.2684 26.0574 11.9042V11.9042ZM18 23.3075C15.0686 23.3075 12.6922 20.9314 12.6922 18C12.6922 15.0686 15.0686 12.6925 18 12.6925C20.9312 12.6925 23.3075 15.0686 23.3075 18C23.3075 20.9314 20.9312 23.3075 18 23.3075ZM23.5173 13.723C22.8323 13.723 22.277 13.1677 22.277 12.4827C22.277 11.7977 22.8323 11.2423 23.5173 11.2423C24.2023 11.2423 24.7577 11.7977 24.7577 12.4827C24.7574 13.1677 24.2023 13.723 23.5173 13.723Z"
+                                    fill=" #0078b9"></path>
+                                <path
+                                    d="M18 0C8.06039 0 0 8.06039 0 18C0 27.9396 8.06039 36 18 36C27.9396 36 36 27.9396 36 18C36 8.06039 27.9396 0 18 0ZM28.2736 22.2613C28.2236 23.3616 28.0486 24.1128 27.7932 24.7703C27.2563 26.1587 26.1587 27.2563 24.7703 27.7932C24.1131 28.0486 23.3616 28.2233 22.2616 28.2736C21.1594 28.3239 20.8073 28.3359 18.0003 28.3359C15.193 28.3359 14.8412 28.3239 13.7387 28.2736C12.6387 28.2233 11.8872 28.0486 11.2299 27.7932C10.54 27.5337 9.91544 27.1269 9.39908 26.6009C8.87338 26.0848 8.46661 25.46 8.20706 24.7703C7.95163 24.1131 7.77667 23.3616 7.72668 22.2616C7.67587 21.1591 7.66406 20.807 7.66406 18C7.66406 15.193 7.67587 14.8409 7.72641 13.7387C7.7764 12.6384 7.95108 11.8872 8.20651 11.2297C8.46606 10.54 8.87311 9.91516 9.39908 9.39908C9.91516 8.87311 10.54 8.46634 11.2297 8.20679C11.8872 7.95136 12.6384 7.77667 13.7387 7.72641C14.8409 7.67615 15.193 7.66406 18 7.66406C20.807 7.66406 21.1591 7.67615 22.2613 7.72668C23.3616 7.77667 24.1128 7.95135 24.7703 8.20651C25.46 8.46606 26.0848 8.87311 26.6012 9.39908C27.1269 9.91544 27.5339 10.54 27.7932 11.2297C28.0489 11.8872 28.2236 12.6384 28.2739 13.7387C28.3241 14.8409 28.3359 15.193 28.3359 18C28.3359 20.807 28.3241 21.1591 28.2736 22.2613V22.2613Z"
+                                    fill=" #0078b9"></path>
+                            </svg>
+                        </a>
+                        <a class="menu__icons-link | js-menu-nav-icon" rel="noreferrer"
+                            href="https://www.youtube.com/" target="_blank" aria-label="Youtube">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.7581 21.3723L21.6132 18L15.7581 14.6277V21.3723Z" fill=" #0078b9">
+                                </path>
+                                <path
+                                    d="M18 0C8.06039 0 0 8.06039 0 18C0 27.9396 8.06039 36 18 36C27.9396 36 36 27.9396 36 18C36 8.06039 27.9396 0 18 0ZM29.2473 18.0184C29.2473 18.0184 29.2473 21.6689 28.7842 23.4292C28.5246 24.3927 27.7649 25.1524 26.8014 25.4117C25.0411 25.875 18 25.875 18 25.875C18 25.875 10.9773 25.875 9.19858 25.3932C8.23508 25.134 7.47537 24.374 7.21582 23.4105C6.75247 21.6689 6.75247 18 6.75247 18C6.75247 18 6.75247 14.3498 7.21582 12.5895C7.4751 11.626 8.25348 10.8476 9.19858 10.5883C10.9589 10.125 18 10.125 18 10.125C18 10.125 25.0411 10.125 26.8014 10.6068C27.7649 10.866 28.5246 11.626 28.7842 12.5895C29.2659 14.3498 29.2473 18.0184 29.2473 18.0184V18.0184Z"
+                                    fill=" #0078b9"></path>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="hamburger | js-hamburger">
+        </div>
+        <div class="hamburger | js-hamburger">
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.41 48.41">
-                    <defs>
-                        <style>
-                            .cls-1,
-                            .cls-2,
-                            .cls-3 {
-                                fill: none;
-                            }
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.41 48.41">
+                <defs>
+                    <style>
+                        .cls-1,
+                        .cls-2,
+                        .cls-3 {
+                            fill: none;
+                        }
 
-                            .cls-1,
-                            .cls-2 {
-                                stroke: #fff;
-                                stroke-width: 2px;
-                            }
+                        .cls-1,
+                        .cls-2 {
+                            stroke: #fff;
+                            stroke-width: 2px;
+                        }
 
-                            .cls-1 {
-                                stroke-miterlimit: 10;
-                            }
+                        .cls-1 {
+                            stroke-miterlimit: 10;
+                        }
 
-                            .cls-2 {
-                                stroke-linecap: round;
-                                stroke-linejoin: round;
-                            }
-                        </style>
-                    </defs>
-                    <g id="Layer_2" data-name="Layer 2">
-                        <g id="Layer_1-2" data-name="Layer 1">
-                            <circle class="hamburger__circle cls-1" cx="24.21" cy="24.21" r="23.21"
-                                transform="translate(-4.92 42.2) rotate(-76.71)"></circle>
-                            <line class="hamburger__middle cls-2" x1="11.15" y1="24.26" x2="37.06" y2="24.26"></line>
-                            <line class="hamburger__top cls-2" x1="32.28" y1="17.92" x2="15.93" y2="17.92"></line>
-                            <line class="hamburger__bottom cls-2" x1="32.28" y1="30.59" x2="15.93" y2="30.59"></line>
-                            <rect class="cls-3" x="0.33" y="0.33" width="47.75" height="47.75"></rect>
-                        </g>
+                        .cls-2 {
+                            stroke-linecap: round;
+                            stroke-linejoin: round;
+                        }
+                    </style>
+                </defs>
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <circle class="hamburger__circle cls-1" cx="24.21" cy="24.21" r="23.21"
+                            transform="translate(-4.92 42.2) rotate(-76.71)"></circle>
+                        <line class="hamburger__middle cls-2" x1="11.15" y1="24.26" x2="37.06" y2="24.26"></line>
+                        <line class="hamburger__top cls-2" x1="32.28" y1="17.92" x2="15.93" y2="17.92"></line>
+                        <line class="hamburger__bottom cls-2" x1="32.28" y1="30.59" x2="15.93" y2="30.59"></line>
+                        <rect class="cls-3" x="0.33" y="0.33" width="47.75" height="47.75"></rect>
                     </g>
-                </svg>
-            </div>
+                </g>
+            </svg>
+        </div>
 
-        </header>
-        <div id="content" class="site-content | js-site-content">
-            <div class="loader | js-loader">
-                <div class="loader__inner">
+    </header>
+    <div id="content" class="site-content | js-site-content">
+   
+
+        <div style="display: none;" class="skip-intro show | js-skip-intro">
+            <img src="static/assets/images/wra-logo.png" style="height: 2em"> SKIP INTRODUCTION
+        </div>
+        <div class="sound-control | js-sound-control">
+            <svg class="sound-control__on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.3 48.3">
+                <defs>
+                    <style>
+                        .cls-1,
+                        .cls-2 {
+                            fill: none;
+                            stroke: #fff;
+                            stroke-miterlimit: 10;
+                            stroke-width: 2px;
+                        }
+
+                        .cls-2 {
+                            stroke-linecap: round;
+                        }
+                    </style>
+                </defs>
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <path fill="#fff"
+                            d="M24.15,2A22.15,22.15,0,1,1,2,24.15,22.17,22.17,0,0,1,24.15,2m0-2A24.15,24.15,0,1,0,48.3,24.15,24.15,24.15,0,0,0,24.15,0Z">
+                        </path>
+                        <path class="cls-1"
+                            d="M16.53,19.28H13.22a2.13,2.13,0,0,0-2.13,2.13v5.4a2.13,2.13,0,0,0,2.13,2.13h3.31l6.16,3.31a1.77,1.77,0,0,0,2.6-1.56V17.53A1.77,1.77,0,0,0,22.69,16Z">
+                        </path>
+                        <path class="cls-2" d="M29.24,19.94a5.84,5.84,0,0,1,.22,8.21"></path>
+                        <path class="cls-2" d="M32.26,16.92a10.11,10.11,0,0,1,.15,14.3"></path>
+                    </g>
+                </g>
+            </svg>
+            <svg class="sound-control__off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.3 48.3">
+                <defs>
+                    <style>
+                        .cls-1,
+                        .cls-2 {
+                            fill: none;
+                            stroke: #fff;
+                            stroke-miterlimit: 10;
+                            stroke-width: 2px;
+                        }
+
+                        .cls-2 {
+                            stroke-linecap: round;
+                        }
+                    </style>
+                </defs>
+                <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <path fill="#fff"
+                            d="M24.15,2A22.15,22.15,0,1,1,2,24.15,22.17,22.17,0,0,1,24.15,2m0-2A24.15,24.15,0,1,0,48.3,24.15,24.15,24.15,0,0,0,24.15,0Z">
+                        </path>
+                        <path class="cls-1"
+                            d="M16.53,19.28H13.22a2.13,2.13,0,0,0-2.13,2.13v5.4a2.13,2.13,0,0,0,2.13,2.13h3.31l6.16,3.31a1.77,1.77,0,0,0,2.6-1.56V17.53A1.77,1.77,0,0,0,22.69,16Z">
+                        </path>
+                        <line class="cls-2" x1="30.18" y1="27.5" x2="36.89" y2="20.79"></line>
+                        <line class="cls-2" x1="30.18" y1="20.79" x2="36.89" y2="27.5"></line>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <style>
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+#text {
+background-color: green;
+padding: 7px;
+font-size: 33px;
+margin-left: 8%;
+border-radius: 5px;
+box-shadow: 3px 5px 5px 0px rgba(196, 159, 25, 0.75);
+-webkit-box-shadow: 3px 5px 5px 0px rgba(196, 159, 25, 0.75);
+-moz-box-shadow: 3px 5px 5px 0px rgba(196, 159, 25, 0.75);
+font-family: 'Italianno', cursive;
+letter-spacing: 8px;
+font-family: 'Italianno', cursive;
+}
+        </style>
+
+        </style>
+        <main class="main | js-main smooth-scroll">
+            <div class="sea">
+                <div class="sea__img-box | js-sea-box">
                     <picture>
-                        <source srcset="../static/assets/images/lake.jpg"
-                            type="image/jpg" media="(min-width: 768px)">
-                        <source srcset="../static/assets/images/lake-mobile.jpg"
-                            type="image/jpg" media="(max-width: 767px)">
-                        <source srcset="static/assets/images/lake-mobile.jpg"
-                            type="image/jpg" media="(max-width: 767px)">
-                        <img class="loader__img" src="../static/assets/images/lake.jpg" alt="More">
+                        <source srcset="static/assets/images/lake.jpg" type="image/jpg" media="(min-width: 768px)">
+                        <source srcset="static/assets/images/lake-mobile.jpg" type="image/jpg" media="(max-width: 767px)">
+                        <source srcset="static/assets/images/sea-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="sea__img | js-sea js-image-load js-image-load-mobile"
+                            src="static/assets/images/lake.jpg" alt='More'>
                     </picture>
-                    <div class="loader__percentage"><span class="js-loader-percentage">100</span><span
-                            class="loader__percentage-precentage">%</span>
+                    <picture>
+                        <source srcset="static/assets/images/cloud-one-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="cloud-one__img | js-cloud-one js-image-load js-image-load-mobile"
+                            src="static/assets/images/cloud-one.png" alt='Cloud'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/cloud-two-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="cloud-two__img | js-cloud-two js-image-load js-image-load-mobile"
+                            src="static/assets/images/cloud-two.png" alt='Cloud'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/cloud-three-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="cloud-three__img | js-cloud-three js-image-load"
+                            src="static/assets/images/cloud-one.png" alt='Cloud'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/cloud-two-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="cloud-four__img | js-cloud-four js-image-load"
+                            src="static/assets/images/cloud-two.png" alt='Cloud'>
+                    </picture>
+                    <div class="sea__text sea__text--one | js-sea-text">
+
+                        <div class="sea__text-one | js-text"> Water Resources authority<br>
+
+                            <span id="text">Accounting for every drop!</span><br>
+
+                            <!-- <img src="static/assets/images/wra-logo.png" style="height: 6em; margin-top:1em"> -->
+
+
+                        </div>
+                        <div class="sea__text-break sea__text-break--one">
+                            
+                        </div>
+                        <div class="sea__text-two">
+                            We control pollution and improve water quality <br> in the country's water bodies.</div>
                     </div>
-
-                    <svg class="loader__svg" width="717" height="290" viewBox="0 0 717 290" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
-                            <path fill="#00ADFF"
-                                d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z">
-                            </path>
-                        </pattern>
-                        <g id="wave-mask">
-                            <path d="M132.281,264.564c51.24,0,92.931-41.681,92.931-92.918c0-50.18-87.094-164.069-90.803-168.891L132.281,0l-2.128,2.773
-                            c-3.704,4.813-90.802,118.71-90.802,168.882C39.352,222.883,81.042,264.564,132.281,264.564z"  fill="white" />
-                           
-                            <!-- <path
-                                d="M44.87 49.4399H18.07V245.28C17.33 250.47 12.28 250.95 10.85 250.98H0V289.22H33.29C41.6489 287.141 49.0725 282.326 54.3799 275.542C59.6873 268.758 62.5737 260.394 62.58 251.78V67.1499C62.5813 64.8239 62.1241 62.5203 61.2346 60.3711C60.345 58.2218 59.0406 56.2689 57.3958 54.6242C55.751 52.9794 53.7981 51.6749 51.6489 50.7854C49.4996 49.8958 47.1961 49.4386 44.87 49.4399Z"
-                                fill="white"></path>  -->
-                            <!-- <path
-                                d="M245.35 71.0799C245.35 78.9799 253.27 85.3899 263.06 85.3899H332.68C299.06 122.12 239.78 186.9 239.41 187.46V221.94H386.16V185.94H294.16L386.16 87.4199V49.4399H245.35V71.0799Z"
-                                fill="white"></path> 
-
-
-                            <path
-                                d="M42.3603 0H18.0703V33.71H62.5803V20.22C62.5803 14.8573 60.45 9.71429 56.658 5.9223C52.866 2.13032 47.723 0 42.3603 0Z"
-                                fill="white"></path> -->
-                            <!-- <path
-                                d="M151.17 46.67C94.1695 46.32 85.4896 91.96 85.8296 93.67L127.92 93.84C133.11 80.62 155.15 82.17 155.15 82.17C182.15 81.65 183.15 96.69 183.15 96.69C183.15 114.32 132.59 119.25 132.59 119.25C75.8095 123.91 80.6496 173.52 80.6496 173.52C81.6496 229.18 143.56 225.72 143.56 225.72C159.304 226.351 174.966 223.149 189.2 216.39C192.31 219.16 199.91 221.92 199.91 221.92H224.81V85.39C216.51 42.87 151.17 46.67 151.17 46.67ZM182.56 160.38C182.061 163.149 181.27 165.858 180.2 168.46C176.912 176.25 170.976 182.626 163.44 186.46C150.99 192.71 128.72 191.67 122.87 176.38C120.55 170.32 122.42 163.21 126.45 158.11C132.83 150.03 143.45 146.76 153.56 144.73C163.67 142.7 174.28 141.34 182.87 135.66C183.49 143.87 184.07 152.36 182.56 160.38Z"
-                                fill="white"></path> 
-                            <path
-                                d="M470.6 46.12C413.6 45.77 404.92 91.41 405.26 93.12L447.35 93.29C452.54 80.06 474.58 81.62 474.58 81.62C501.58 81.1 502.58 96.14 502.58 96.14C502.58 113.77 452.02 118.7 452.02 118.7C395.24 123.38 400.08 173 400.08 173C401.08 228.66 463 225.2 463 225.2C478.741 225.83 494.4 222.628 508.63 215.87C511.74 218.64 519.34 221.4 519.34 221.4H544.24V84.84C535.94 42.32 470.6 46.12 470.6 46.12ZM502 159.83C501.502 162.599 500.711 165.308 499.64 167.91C496.353 175.7 490.416 182.076 482.88 185.91C470.43 192.16 448.16 191.12 442.31 175.83C439.99 169.77 441.86 162.66 445.89 157.56C452.27 149.48 462.89 146.2 473 144.18C483.11 142.16 493.72 140.79 502.31 135.11C502.92 143.32 503.5 151.81 502 159.83Z"
-                                fill="white"></path>
-                            <path
-                                d="M716.08 56.26H661.77L609.49 117.31V17.71C609.49 13.013 607.624 8.50841 604.303 5.18714C600.982 1.86587 596.477 0 591.78 0H565V222H609.51V163.35C609.51 163.35 611.75 151.42 617.2 150.35C622.65 149.28 645.72 177.66 662.83 221.95H716.1L656.87 121.05L716.08 56.26Z"
-                                fill="white"></path>  -->
-                        </g>
-                        <mask id="text-mask">
-                            <use x="0" y="0" xlink:href="#wave-mask" opacity="1" fill="#ffffff"></use>
-                        </mask>
-                        <rect class="loader__wave | js-wave" mask="url(#text-mask)" fill="url(#water)" x="-714" y="290"
-                            width="1434" height="0" style="height: 360px; y: -70px;"></rect>
-                    </svg>
-
-                    <div class="loader__text">WRA WEB EXPERIENCE</div>
-                </div>
-            </div>
-
-            <div class="skip-intro show | js-skip-intro">
-                <img src="static/assets/images/wra-logo.png" style="height: 2em"> SKIP INTRODUCTION
-            </div>
-            <div class="sound-control | js-sound-control">
-                <svg class="sound-control__on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.3 48.3">
-                    <defs>
-                        <style>
-                            .cls-1,
-                            .cls-2 {
-                                fill: none;
-                                stroke: #fff;
-                                stroke-miterlimit: 10;
-                                stroke-width: 2px;
-                            }
-
-                            .cls-2 {
-                                stroke-linecap: round;
-                            }
-                        </style>
-                    </defs>
-                    <g id="Layer_2" data-name="Layer 2">
-                        <g id="Layer_1-2" data-name="Layer 1">
-                            <path fill="#fff"
-                                d="M24.15,2A22.15,22.15,0,1,1,2,24.15,22.17,22.17,0,0,1,24.15,2m0-2A24.15,24.15,0,1,0,48.3,24.15,24.15,24.15,0,0,0,24.15,0Z">
-                            </path>
-                            <path class="cls-1"
-                                d="M16.53,19.28H13.22a2.13,2.13,0,0,0-2.13,2.13v5.4a2.13,2.13,0,0,0,2.13,2.13h3.31l6.16,3.31a1.77,1.77,0,0,0,2.6-1.56V17.53A1.77,1.77,0,0,0,22.69,16Z">
-                            </path>
-                            <path class="cls-2" d="M29.24,19.94a5.84,5.84,0,0,1,.22,8.21"></path>
-                            <path class="cls-2" d="M32.26,16.92a10.11,10.11,0,0,1,.15,14.3"></path>
-                        </g>
-                    </g>
-                </svg>
-                <svg class="sound-control__off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.3 48.3">
-                    <defs>
-                        <style>
-                            .cls-1,
-                            .cls-2 {
-                                fill: none;
-                                stroke: #fff;
-                                stroke-miterlimit: 10;
-                                stroke-width: 2px;
-                            }
-
-                            .cls-2 {
-                                stroke-linecap: round;
-                            }
-                        </style>
-                    </defs>
-                    <g id="Layer_2" data-name="Layer 2">
-                        <g id="Layer_1-2" data-name="Layer 1">
-                            <path fill="#fff"
-                                d="M24.15,2A22.15,22.15,0,1,1,2,24.15,22.17,22.17,0,0,1,24.15,2m0-2A24.15,24.15,0,1,0,48.3,24.15,24.15,24.15,0,0,0,24.15,0Z">
-                            </path>
-                            <path class="cls-1"
-                                d="M16.53,19.28H13.22a2.13,2.13,0,0,0-2.13,2.13v5.4a2.13,2.13,0,0,0,2.13,2.13h3.31l6.16,3.31a1.77,1.77,0,0,0,2.6-1.56V17.53A1.77,1.77,0,0,0,22.69,16Z">
-                            </path>
-                            <line class="cls-2" x1="30.18" y1="27.5" x2="36.89" y2="20.79"></line>
-                            <line class="cls-2" x1="30.18" y1="20.79" x2="36.89" y2="27.5"></line>
-                        </g>
-                    </g>
-                </svg>
-            </div>
-            <style>
-                #text {
-                    background-color: green;
-                    padding: 7px;
-                    font-size: .7em;
-                    margin-left: 9%;
-                    border-radius: 5px;
-                    box-shadow: 3px 5px 5px 0px rgba(196, 159, 25, 0.75);
-                    -webkit-box-shadow: 3px 5px 5px 0px rgba(196, 159, 25, 0.75);
-                    -moz-box-shadow: 3px 5px 5px 0px rgba(196, 159, 25, 0.75);
-
-                }
-            </style>
-
-            </style>
-            <main class="main | js-main smooth-scroll">
-                <div class="sea">
-                    <div class="sea__img-box | js-sea-box">
-                        <picture>
-                            <source srcset="static/assets/images/lake.jpg" type="image/jpg" media="(min-width: 768px)">
-                            <source srcset="static/assets/images/lake-mobile.jpg" type="image/jpg" media="(max-width: 767px)">
-                            <source srcset="static/assets/images/sea-mobile.png" type="image/png"
-                                media="(max-width: 767px)">
-                            <img class="sea__img | js-sea js-image-load js-image-load-mobile"
-                                src="static/assets/images/lake.jpg" alt='More'>
-                        </picture>
-                        <picture>
-                            <source srcset="static/assets/images/cloud-one-mobile.png" type="image/png"
-                                media="(max-width: 767px)">
-                            <img class="cloud-one__img | js-cloud-one js-image-load js-image-load-mobile"
-                                src="static/assets/images/cloud-one.png" alt='Cloud'>
-                        </picture>
-                        <picture>
-                            <source srcset="static/assets/images/cloud-two-mobile.png" type="image/png"
-                                media="(max-width: 767px)">
-                            <img class="cloud-two__img | js-cloud-two js-image-load js-image-load-mobile"
-                                src="static/assets/images/cloud-two.png" alt='Cloud'>
-                        </picture>
-                        <picture>
-                            <source srcset="static/assets/images/cloud-three-mobile.png" type="image/png"
-                                media="(max-width: 767px)">
-                            <img class="cloud-three__img | js-cloud-three js-image-load"
-                                src="static/assets/images/cloud-one.png" alt='Cloud'>
-                        </picture>
-                        <picture>
-                            <source srcset="static/assets/images/cloud-two-mobile.png" type="image/png"
-                                media="(max-width: 767px)">
-                            <img class="cloud-four__img | js-cloud-four js-image-load"
-                                src="static/assets/images/cloud-two.png" alt='Cloud'>
-                        </picture>
-                        <div class="sea__text sea__text--one | js-sea-text">
-
-                            <div class="sea__text-one | js-text"> Water Resources authority<br>
-
-                                <span id="text">Accounting for every drop
-                                    .</span><br>
-
-                                <img src="static/assets/images/wra-logo.png" style="height: 6em; margin-top:1em">
-
-
-                            </div>
-                            <div class="sea__text-break sea__text-break--one">
-                                <div class="sea__text-dot | js-dot" data-class="show-first"></div>
-                                <div class="sea__text-line"></div>
-                                <div class="sea__text-dot | js-dot" data-class="show-second"
-                                    data-target="js-sea-text-trigger-two">
-                                </div>
-                            </div>
-                            <div class="sea__text-two">
-                                We control pollution and improve water quality <br> in the country's water bodies.</div>
-                        </div>
-                        <div class="rocks | js-rocks">
-                            <div class="rock__img-box-zero | js-rock-box-zero">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-zero.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/rock-zero-mobile.webp" type="image/webp"
-                                        media="(max-width: 767px)">
-                                    <source srcset="static/assets/images/rock-zero-mobile.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-zero | js-rock-zero js-image-load js-image-load-mobile"
-                                        src="static/assets/images/rock-zero.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-one | js-rock-box-one">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-one.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/rock-one-mobile.webp" type="image/webp"
-                                        media="(max-width: 767px)">
-                                    <source srcset="static/assets/images/rock-one-mobile.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-one | js-rock-one js-image-load js-image-load-mobile"
-                                        src="static/assets/images/rock-one.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-two | js-rock-box-two">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-two.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/rock-two-mobile.webp" type="image/webp"
-                                        media="(max-width: 767px)">
-                                    <source srcset="static/assets/images/rock-two-mobile.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-two | js-rock-two" src="static/assets/images/rock-two.png"
-                                        alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-three | js-rock-box-three">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-three.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/rock-three-mobile.webp" type="image/webp"
-                                        media="(max-width: 767px)">
-                                    <source srcset="static/assets/images/rock-three-mobile.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-three | js-rock-three js-image-load js-image-load-mobile"
-                                        src="static/assets/images/rock-three.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-four | js-rock-box-four">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-four.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-four | js-rock-four js-image-load js-image-load-mobile"
-                                        src="static/assets/images/rock-four.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-five | js-rock-box-five">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-five.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-five | js-rock-five js-image-load"
-                                        src="static/assets/images/rock-five.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-six | js-rock-box-six">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-six.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-six | js-rock-six js-image-load"
-                                        src="static/assets/images/rock-six.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-seven | js-rock-box-seven">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-seven.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-seven | js-rock-seven js-image-load"
-                                        src="static/assets/images/rock-seven.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-eight | js-rock-box-eight">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-eight.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-eight | js-rock-eight js-image-load"
-                                        src="static/assets/images/rock-eight.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-nine | js-rock-box-nine">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-nine.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-nine | js-rock-nine js-image-load"
-                                        src="static/assets/images/rock-nine.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-ten | js-rock-box-ten">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-ten.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-ten | js-rock-ten js-image-load"
-                                        src="static/assets/images/rock-ten.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-elewen | js-rock-box-elewen">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-elewen.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-elewen | js-rock-elewen js-image-load"
-                                        src="static/assets/images/rock-elewen.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-twelve | js-rock-box-twelve">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-twelve.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
-                                        media="(max-width: 767px)">
-                                    <img class="rock__img-twelve | js-rock-twelve js-image-load"
-                                        src="static/assets/images/rock-twelve.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-thirteen | js-rock-box-thirteen">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-thirteen.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <img class="rock__img-thirteen | js-rock-thirteen js-image-load-mobile"
-                                        src="static/assets/images/rock-thirteen.png" alt='The wall'>
-                                </picture>
-                            </div>
-                            <div class="rock__img-box-fourteen | js-rock-box-fourteen">
-                                <picture>
-                                    <source srcset="static/assets/images/rock-fourteen.webp" type="image/webp"
-                                        media="(min-width: 768px)">
-                                    <img class="rock__img-fourteen | js-rock-fourteen js-image-load-mobile"
-                                        src="static/assets/images/rock-fourteen.png" alt='The wall'>
-                                </picture>
-                            </div>
-                        </div>
-                        <div class="sky__box | js-sky-box">
+                    <div class="rocks | js-rocks">
+                        <div class="rock__img-box-zero | js-rock-box-zero">
                             <picture>
-                                <source srcset="static/assets/images/sky.webp" type="image/webp"
+                                <source srcset="static/assets/images/rock-zero.webp" type="image/webp"
                                     media="(min-width: 768px)">
-                                <source srcset="static/assets/images/sky-mobile.webp" type="image/webp"
+                                <source srcset="static/assets/images/rock-zero-mobile.webp" type="image/webp"
                                     media="(max-width: 767px)">
-                                <source srcset="static/assets/images/sky-mobile.png" type="image/png"
+                                <source srcset="static/assets/images/rock-zero-mobile.png" type="image/png"
                                     media="(max-width: 767px)">
-                                <img class="sky__img | js-sky-img js-image-load js-image-load-mobile"
-                                    src="static/assets/images/sky.png" alt='Or'>
+                                <img class="rock__img-zero | js-rock-zero js-image-load js-image-load-mobile"
+                                    src="static/assets/images/rock-zero.png" alt='The wall'>
                             </picture>
                         </div>
-                        <div class="clouds__box | js-clouds-box">
+                        <div class="rock__img-box-one | js-rock-box-one">
                             <picture>
+                                <source srcset="static/assets/images/rock-one.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <source srcset="static/assets/images/rock-one-mobile.webp" type="image/webp"
+                                    media="(max-width: 767px)">
+                                <source srcset="static/assets/images/rock-one-mobile.png" type="image/png"
+                                    media="(max-width: 767px)">
+                                <img class="rock__img-one | js-rock-one js-image-load js-image-load-mobile"
+                                    src="static/assets/images/rock-one.png" alt='The wall'>
+                            </picture>
+                        </div>
+                        <div class="rock__img-box-two | js-rock-box-two">
+                            <picture>
+                                <source srcset="static/assets/images/rock-two.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <source srcset="static/assets/images/rock-two-mobile.webp" type="image/webp"
+                                    media="(max-width: 767px)">
+                                <source srcset="static/assets/images/rock-two-mobile.png" type="image/png"
+                                    media="(max-width: 767px)">
+                                <img class="rock__img-two | js-rock-two" src="static/assets/images/rock-two.png"
+                                    alt='The wall'>
+                            </picture>
+                        </div>
+                        <div class="rock__img-box-three | js-rock-box-three">
+                            <picture>
+                                <source srcset="static/assets/images/rock-three.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <source srcset="static/assets/images/rock-three-mobile.webp" type="image/webp"
+                                    media="(max-width: 767px)">
+                                <source srcset="static/assets/images/rock-three-mobile.png" type="image/png"
+                                    media="(max-width: 767px)">
+                                <img class="rock__img-three | js-rock-three js-image-load js-image-load-mobile"
+                                    src="static/assets/images/rock-three.png" alt='The wall'>
+                            </picture>
+                        </div>
+                        <div class="rock__img-box-four | js-rock-box-four">
+                            <picture>
+                                <source srcset="static/assets/images/rock-four.webp" type="image/webp"
+                                    media="(min-width: 768px)">
                                 <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
                                     media="(max-width: 767px)">
-                                <img class="clouds__img | js-clouds-img js-image-load"
-                                    src="static/assets/images/clouds.png" alt='Clouds'>
+                                <img class="rock__img-four | js-rock-four js-image-load js-image-load-mobile"
+                                    src="static/assets/images/rock-four.png" alt='The wall'>
                             </picture>
                         </div>
-                        <div class="sea__text sea__text-rocks | js-rock-text">
-                            <div class="sea__text-one | js-text">
-                                Protecting all water resources around the country<br>and maintaining their purity.</div>
-                            <div class="sea__text-break sea__text-break--one">
-                                <div class="sea__text-dot | js-dot-rock" data-class="show-first"
-                                    data-target="js-rock-text-trigger-one"></div>
-                                <div class="sea__text-line"></div>
-                                <div class="sea__text-dot | js-dot-rock" data-class="show-second"
-                                    data-target="js-rock-text-trigger-two"></div>
-                            </div>
-                            <div class="sea__text-two">
-                                Water is created from green, so <br>we value water cathment areas <br> like forests.
-                            </div>
+                        <div class="rock__img-box-five | js-rock-box-five">
+                            <picture>
+                                <source srcset="static/assets/images/rock-five.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                                    media="(max-width: 767px)">
+                                <img class="rock__img-five | js-rock-five js-image-load"
+                                    src="static/assets/images/rock-five.png" alt='The wall'>
+                            </picture>
+                        </div>
+                        <div class="rock__img-box-six | js-rock-box-six">
+                            <picture>
+                                <source srcset="static/assets/images/rock-six.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                                    media="(max-width: 767px)">
+                                <img class="rock__img-six | js-rock-six js-image-load"
+                                    src="static/assets/images/rock-six.png" alt='The wall'>
+                            </picture>
+                        </div>
+                        <div class="rock__img-box-seven | js-rock-box-seven">
+                            <picture>
+                                <source srcset="static/assets/images/rock-seven.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                                    media="(max-width: 767px)">
+                                <img class="rock__img-seven | js-rock-seven js-image-load"
+                                    src="static/assets/images/rock-seven.png" alt='The wall'>
+                            </picture>
+                        </div>
+                        <div class="rock__img-box-eight | js-rock-box-eight">
+                            <picture>
+                                <source srcset="static/assets/images/rock-eight.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                                    media="(max-width: 767px)">
+                                <img class="rock__img-eight | js-rock-eight js-image-load"
+                                    src="static/assets/images/rock-eight.png" alt='The wall'>
+                            </picture>
+                        </div>
+                        <div class="rock__img-box-nine | js-rock-box-nine">
+                            <picture>
+                                <source srcset="static/assets/images/rock-nine.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                                    media="(max-width: 767px)">
+                                <img class="rock__img-nine | js-rock-nine js-image-load"
+                                    src="static/assets/images/rock-nine.png" alt='The wall'>
+                            </picture>
+                        </div>
+                        <div class="rock__img-box-ten | js-rock-box-ten">
+                            <picture>
+                                <source srcset="static/assets/images/rock-ten.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                                    media="(max-width: 767px)">
+                                <img class="rock__img-ten | js-rock-ten js-image-load"
+                                    src="static/assets/images/rock-ten.png" alt='The wall'>
+                            </picture>
+                        </div>
+                        <div class="rock__img-box-elewen | js-rock-box-elewen">
+                            <picture>
+                                <source srcset="static/assets/images/rock-elewen.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                                    media="(max-width: 767px)">
+                                <img class="rock__img-elewen | js-rock-elewen js-image-load"
+                                    src="static/assets/images/rock-elewen.png" alt='The wall'>
+                            </picture>
+                        </div>
+                        <div class="rock__img-box-twelve | js-rock-box-twelve">
+                            <picture>
+                                <source srcset="static/assets/images/rock-twelve.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                                    media="(max-width: 767px)">
+                                <img class="rock__img-twelve | js-rock-twelve js-image-load"
+                                    src="static/assets/images/rock-twelve.png" alt='The wall'>
+                            </picture>
+                        </div>
+                        <div class="rock__img-box-thirteen | js-rock-box-thirteen">
+                            <picture>
+                                <source srcset="static/assets/images/rock-thirteen.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <img class="rock__img-thirteen | js-rock-thirteen js-image-load-mobile"
+                                    src="static/assets/images/rock-thirteen.png" alt='The wall'>
+                            </picture>
+                        </div>
+                        <div class="rock__img-box-fourteen | js-rock-box-fourteen">
+                            <picture>
+                                <source srcset="static/assets/images/rock-fourteen.webp" type="image/webp"
+                                    media="(min-width: 768px)">
+                                <img class="rock__img-fourteen | js-rock-fourteen js-image-load-mobile"
+                                    src="static/assets/images/rock-fourteen.png" alt='The wall'>
+                            </picture>
                         </div>
                     </div>
-                </div>
-                <div class="sea-text__triggers">
-                    <div class="sea-text__trigge-two | js-sea-text-trigger-two"></div>
-                    <div class="sea-text__trigge-three | js-sea-text-trigger-three"></div>
-                    <div class="sea-text__trigge-four | js-sea-text-trigger-four"></div>
-                </div>
-                <div class="sea-trigger | js-sea-trigger"></div>
-                <div class="rock-triggers">
-                    <div class="rock-trigger-zero | js-rock-trigger-zero"></div>
-                    <div class="rock-trigger-one | js-rock-trigger-one"></div>
-                    <div class="rock-trigger-two | js-rock-trigger-two"></div>
-                    <div class="rock-trigger-three | js-rock-trigger-three"></div>
-                    <div class="rock-trigger-four | js-rock-trigger-four"></div>
-                    <div class="rock-trigger-five | js-rock-trigger-five"></div>
-                    <div class="rock-trigger-six | js-rock-trigger-six"></div>
-                    <div class="rock-trigger-seven | js-rock-trigger-seven"></div>
-                    <div class="rock-trigger-eight | js-rock-trigger-eight"></div>
-                    <div class="rock-trigger-nine | js-rock-trigger-nine"></div>
-                    <div class="rock-trigger-ten | js-rock-trigger-ten"></div>
-                    <div class="rock-trigger-elewen | js-rock-trigger-elewen"></div>
-                    <div class="rock-trigger-twelve | js-rock-trigger-twelve"></div>
-                    <div class="rock-trigger-thirteen | js-rock-trigger-thirteen"></div>
-                    <div class="rock-trigger-fourteen | js-rock-trigger-fourteen"></div>
-                    <div class="sky-trigger | js-sky-trigger"></div>
-                    <div class="rock-text-trigger-one | js-rock-text-trigger-one"></div>
-                    <div class="clouds-trigger | js-clouds-trigger"></div>
-                    <div class="rock-text-trigger-two | js-rock-text-trigger-two"></div>
-                    <div class="rock-text-trigger-three | js-rock-text-trigger-three"></div>
-                    <div class="rock-sound-one | js-rock-sound-one"></div>
-                    <div class="rock-sound-two | js-rock-sound-two"></div>
-                    <div class="rock-sound-three | js-rock-sound-three"></div>
-                </div>
-
-                <div class="bushes | js-bushes">
-                    <div class="bushes__box | js-bushes-box">
-                        <div class="sea__text sea__text-bushes | js-bushes-text">
-                            <div class="sea__text-one | js-text">
-                                Starting from the mountains <br>all the way to the sea <br> .....</div>
-                            <div class="sea__text-break sea__text-break--one">
-                                <div class="sea__text-dot | js-dot-bush" data-class="show-first"
-                                    data-target="js-bush-text-trigger-one"></div>
-                                <div class="sea__text-line"></div>
-                                <div class="sea__text-dot | js-dot-bush" data-class="show-second"
-                                    data-target="js-bush-text-trigger-two"></div>
-                            </div>
-                            <div class="sea__text-two">
-
-                                Mau Forest is a unique ecosystem, <br> and it gives water to man. <br> That magic of
-                                nature, to its last drop.</div>
-                        </div>
+                    <div class="sky__box | js-sky-box">
                         <picture>
-                            <source srcset="static/assets/images/bushes.webp" type="image/webp"
+                            <source srcset="static/assets/images/sky.webp" type="image/webp"
                                 media="(min-width: 768px)">
-                            <source srcset="static/assets/images/bushes-mobile.webp" type="image/webp"
+                            <source srcset="static/assets/images/sky-mobile.webp" type="image/webp"
                                 media="(max-width: 767px)">
-                            <source srcset="static/assets/images/bushes-mobile.png" type="image/png"
+                            <source srcset="static/assets/images/sky-mobile.png" type="image/png"
                                 media="(max-width: 767px)">
-                            <img class="bushes__img | js-bushes-img js-image-load js-image-load-mobile"
-                                src="static/assets/images/bushes.png" alt='Undergrowth'>
+                            <img class="sky__img | js-sky-img js-image-load js-image-load-mobile"
+                                src="static/assets/images/sky.png" alt='Or'>
                         </picture>
+                    </div>
+                    <div class="clouds__box | js-clouds-box">
                         <picture>
-                            <source srcset="static/assets/images/jungle.webp" type="image/webp"
-                                media="(min-width: 768px)">
-                            <source srcset="static/assets/images/jungle-mobile.webp" type="image/webp"
-                                media="(max-width: 767px)">
-                            <source srcset="static/assets/images/jungle-mobile.png" type="image/png"
-                                media="(max-width: 767px)">
-                            <img class="jungle__img | js-jungle-img js-image-load js-image-load-mobile"
-                                src="static/assets/images/jungle.png" alt='The jungle'>
-                        </picture>
-                        <picture>
-                            <source srcset="static/assets/images/tree.webp" type="image/webp"
-                                media="(min-width: 768px)">
                             <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
                                 media="(max-width: 767px)">
-                            <img class="tree__img | js-tree-img js-image-load" src="static/assets/images/tree.png"
-                                alt='Wood'>
-                        </picture>
-                        <picture>
-                            <source srcset="static/assets/images/fern.webp" type="image/webp"
-                                media="(min-width: 768px)">
-                            <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
-                                media="(max-width: 767px)">
-                            <img class="fern__img | js-fern-img js-image-load" src="static/assets/images/fern.png"
-                                alt='Fern'>
-                        </picture>
-                        <div class="left-bush__box | js-left-bush-box">
-                            <picture>
-                                <source srcset="static/assets/images/left-bush.webp" type="image/webp"
-                                    media="(min-width: 768px)">
-                                <source srcset="static/assets/images/left-bush-mobile.webp" type="image/webp"
-                                    media="(max-width: 767px)">
-                                <source srcset="static/assets/images/left-bush-mobile.png" type="image/png"
-                                    media="(max-width: 767px)">
-                                <img class="left-bush__img | js-left-bush-img js-image-load js-image-load-mobile"
-                                    src="static/assets/images/left-bush.png" alt='Water'>
-                            </picture>
-                        </div>
-                        <picture>
-                            <source srcset="static/assets/images/right-bush.webp" type="image/webp"
-                                media="(min-width: 768px)">
-                            <source srcset="static/assets/images/right-bush-mobile.webp" type="image/webp"
-                                media="(max-width: 767px)">
-                            <source srcset="static/assets/images/right-bush-mobile.png" type="image/png"
-                                media="(max-width: 767px)">
-                            <img class="right-bush__img | js-right-bush-img js-image-load js-image-load-mobile"
-                                src="static/assets/images/right-bush.png" alt='Water'>
+                            <img class="clouds__img | js-clouds-img js-image-load"
+                                src="static/assets/images/clouds.png" alt='Clouds'>
                         </picture>
                     </div>
-                    <div class="bushes__trigger-pin | js-bushes-trigger-pin"></div>
-                    <div class="bushes__trigger | js-bushes-trigger"></div>
-                    <div class="bushes__text-trigger-one | js-bush-text-trigger-one"></div>
-                    <div class="bushes__text-trigger-two | js-bush-text-trigger-two"></div>
-                    <div class="bushes__text-trigger-three | js-bush-text-trigger-three"></div>
-                    <div class="bushes__text-trigger-four | js-bush-text-trigger-four"></div>
-                    <div class="tree__trigger | js-tree-trigger"></div>
-                    <div class="fern__trigger | js-fern-trigger"></div>
-                    <div class="left-bush__trigger | js-left-bush-trigger"></div>
-                    <div class="right-bush__trigger | js-right-bush-trigger"></div>
-                    <div class="forest-sound-trigger-one | js-forest-sound-trigger-one"></div>
-                    <div class="forest-sound-trigger-two | js-forest-sound-trigger-two"></div>
-                    <div class="forest-sound-trigger-three | js-forest-sound-trigger-three"></div>
-                    <div class="forest-sound-trigger-four | js-forest-sound-trigger-four"></div>
-                    <div class="left-bush__trigger-reverse | js-left-bush-trigger-reverse"></div>
-                </div>
-
-
-                <div class="content-fix | js-content-fix">
-                    <div class="content | js-content"
-                        style="background-image: url(&#39;https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/background2.jpg&#39;)">
-                        <div class="content__overlay">
+                    <div class="sea__text sea__text-rocks | js-rock-text">
+                        <div class="sea__text-one | js-text">
+                            Protecting all water resources around the country<br>and maintaining their purity.</div>
+                        <div class="sea__text-break sea__text-break--one">
+                     
                         </div>
-                        <div class="banner">
-                            <div class="branch-two__trigger | js-branch-two-trigger"></div>
+                        <div class="sea__text-two">
+                            Water is created from green, so <br>we value water cathment areas <br> like forests.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sea-text__triggers">
+                <div class="sea-text__trigge-two | js-sea-text-trigger-two"></div>
+                <div class="sea-text__trigge-three | js-sea-text-trigger-three"></div>
+                <div class="sea-text__trigge-four | js-sea-text-trigger-four"></div>
+            </div>
+            <div class="sea-trigger | js-sea-trigger"></div>
+            <div class="rock-triggers">
+                <div class="rock-trigger-zero | js-rock-trigger-zero"></div>
+                <div class="rock-trigger-one | js-rock-trigger-one"></div>
+                <div class="rock-trigger-two | js-rock-trigger-two"></div>
+                <div class="rock-trigger-three | js-rock-trigger-three"></div>
+                <div class="rock-trigger-four | js-rock-trigger-four"></div>
+                <div class="rock-trigger-five | js-rock-trigger-five"></div>
+                <div class="rock-trigger-six | js-rock-trigger-six"></div>
+                <div class="rock-trigger-seven | js-rock-trigger-seven"></div>
+                <div class="rock-trigger-eight | js-rock-trigger-eight"></div>
+                <div class="rock-trigger-nine | js-rock-trigger-nine"></div>
+                <div class="rock-trigger-ten | js-rock-trigger-ten"></div>
+                <div class="rock-trigger-elewen | js-rock-trigger-elewen"></div>
+                <div class="rock-trigger-twelve | js-rock-trigger-twelve"></div>
+                <div class="rock-trigger-thirteen | js-rock-trigger-thirteen"></div>
+                <div class="rock-trigger-fourteen | js-rock-trigger-fourteen"></div>
+                <div class="sky-trigger | js-sky-trigger"></div>
+                <div class="rock-text-trigger-one | js-rock-text-trigger-one"></div>
+                <div class="clouds-trigger | js-clouds-trigger"></div>
+                <div class="rock-text-trigger-two | js-rock-text-trigger-two"></div>
+                <div class="rock-text-trigger-three | js-rock-text-trigger-three"></div>
+                <div class="rock-sound-one | js-rock-sound-one"></div>
+                <div class="rock-sound-two | js-rock-sound-two"></div>
+                <div class="rock-sound-three | js-rock-sound-three"></div>
+            </div>
 
-                            <div class="banner__hero">
-                                <div class="banner-hero__img-front-box">
-                                    <picture>
-                                        <source srcset="../static/images/hero-front.png" type="image/png"
-                                            media="(max-width: 767px)">
-                                        <img class="banner-hero__img-front | js-image-load js-image-load-mobile"
-                                            src="../static/images/hero-front.png" alt="Zbunje">
-                                    </picture>
-                                    <div class="banner-hero__img-front-water"
-                                        style="background-image: url(&#39;https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/hero-front-water.png&#39;)">
-                                    </div>
-                                </div>
-                                <svg class="water-svg">
-                                    <filter id="turbulence" x="0" y="0" width="100%" height="100%">
-                                        <feturbulence id="sea-filter" numOctaves="1" seed="2" baseFrequency="0.02 0.05">
-                                        </feturbulence>
-                                        <fedisplacementmap in2="turbulence" scale="30" in="SourceGraphic">
-                                        </fedisplacementmap>
-                                        <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="60s"
-                                            keyTimes="0;0.5;1" values="0.02 0.25;0.02 0.55;0.02 0.25"
-                                            repeatCount="indefinite"></animate>
-                                    </filter>
-                                </svg>
+            <div class="bushes | js-bushes">
+                <div class="bushes__box | js-bushes-box">
+                    <div class="sea__text sea__text-bushes | js-bushes-text">
+                        <div class="sea__text-one | js-text">
+                            Starting from the mountains <br>all the way to the sea <br> .....</div>
+                        <div class="sea__text-break sea__text-break--one">
+                       
+                        </div>
+                        <div class="sea__text-two">
+
+                            Mau Forest is a unique ecosystem, <br> and it gives water to man. <br> That magic of
+                            nature, to its last drop.</div>
+                    </div>
+                    <picture>
+                        <source srcset="static/assets/images/bushes.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/bushes-mobile.webp" type="image/webp"
+                            media="(max-width: 767px)">
+                        <source srcset="static/assets/images/bushes-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="bushes__img | js-bushes-img js-image-load js-image-load-mobile"
+                            src="static/assets/images/bushes.png" alt='Undergrowth'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/jungle.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/jungle-mobile.webp" type="image/webp"
+                            media="(max-width: 767px)">
+                        <source srcset="static/assets/images/jungle-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="jungle__img | js-jungle-img js-image-load js-image-load-mobile"
+                            src="static/assets/images/jungle.png" alt='The jungle'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/tree.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="tree__img | js-tree-img js-image-load" src="static/assets/images/tree.png"
+                            alt='Wood'>
+                    </picture>
+                    <picture>
+                        <source srcset="static/assets/images/fern.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/vitaminska-leaf-one.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="fern__img | js-fern-img js-image-load" src="static/assets/images/fern.png"
+                            alt='Fern'>
+                    </picture>
+                    <div class="left-bush__box | js-left-bush-box">
+                        <picture>
+                            <source srcset="static/assets/images/left-bush.webp" type="image/webp"
+                                media="(min-width: 768px)">
+                            <source srcset="static/assets/images/left-bush-mobile.webp" type="image/webp"
+                                media="(max-width: 767px)">
+                            <source srcset="static/assets/images/left-bush-mobile.png" type="image/png"
+                                media="(max-width: 767px)">
+                            <img class="left-bush__img | js-left-bush-img js-image-load js-image-load-mobile"
+                                src="static/assets/images/left-bush.png" alt='Water'>
+                        </picture>
+                    </div>
+                    <picture>
+                        <source srcset="static/assets/images/right-bush.webp" type="image/webp"
+                            media="(min-width: 768px)">
+                        <source srcset="static/assets/images/right-bush-mobile.webp" type="image/webp"
+                            media="(max-width: 767px)">
+                        <source srcset="static/assets/images/right-bush-mobile.png" type="image/png"
+                            media="(max-width: 767px)">
+                        <img class="right-bush__img | js-right-bush-img js-image-load js-image-load-mobile"
+                            src="static/assets/images/right-bush.png" alt='Water'>
+                    </picture>
+                </div>
+                <div class="bushes__trigger-pin | js-bushes-trigger-pin"></div>
+                <div class="bushes__trigger | js-bushes-trigger"></div>
+                <div class="bushes__text-trigger-one | js-bush-text-trigger-one"></div>
+                <div class="bushes__text-trigger-two | js-bush-text-trigger-two"></div>
+                <div class="bushes__text-trigger-three | js-bush-text-trigger-three"></div>
+                <div class="bushes__text-trigger-four | js-bush-text-trigger-four"></div>
+                <div class="tree__trigger | js-tree-trigger"></div>
+                <div class="fern__trigger | js-fern-trigger"></div>
+                <div class="left-bush__trigger | js-left-bush-trigger"></div>
+                <div class="right-bush__trigger | js-right-bush-trigger"></div>
+                <div class="forest-sound-trigger-one | js-forest-sound-trigger-one"></div>
+                <div class="forest-sound-trigger-two | js-forest-sound-trigger-two"></div>
+                <div class="forest-sound-trigger-three | js-forest-sound-trigger-three"></div>
+                <div class="forest-sound-trigger-four | js-forest-sound-trigger-four"></div>
+                <div class="left-bush__trigger-reverse | js-left-bush-trigger-reverse"></div>
+            </div>
+
+
+            <div class="content-fix | js-content-fix">
+                <div  class="content | js-content"
+                    style="background-image: url(&#39;https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/background2.jpg&#39;); ">
+                
+                    <div class="banner">
+                        <div class="branch-two__trigger | js-branch-two-trigger"></div>
+
+                        <div class="banner__hero">
+                            <div class="banner-hero__img-front-box">
                                 <picture>
-
-                                    <source
-                                        srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/hero-back.webp"
-                                        type="image/webp" media="(min-width: 768px)">
-                                    <source
-                                        srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/vitaminska-leaf-one.png"
-                                        type="image/png" media="(max-width: 767px)">
-                                    <img class="banner-hero__img-back | js-image-load"
-                                        src="../static/images/hero-back.png" alt="Zbunje">
+                                    <source srcset="../static/images/hero-front.png" type="image/png"
+                                        media="(max-width: 767px)">
+                                    <img class="banner-hero__img-front | js-image-load js-image-load-mobile"
+                                        src="../static/images/hero-front.png" alt="Zbunje">
                                 </picture>
-                                <div class="banner-hero__clouds">
-                                    <img class="banner-hero__img-clouds | js-hero-cloud-one js-image-load"
-                                        src="../static/images/hero-clouds.png" alt="Oblaci">
-                                    <img class="banner-hero__img-clouds-two | js-hero-cloud-two"
-                                        src="../static/images/hero-clouds.png" alt="Oblaci">
+                                <div class="banner-hero__img-front-water"
+                                    style="background-image: url(&#39;https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/hero-front-water.png&#39;)">
                                 </div>
                             </div>
-                            <div class="banner-bush__box | js-banner-bush-box">
-                                <img class="banner-branch-right__img | js-banner-branch-two js-image-load"
-                                    src="../static/images/banner-branch-right.png" alt="Grana">
-                                <img class="banner-branch-left__img | js-banner-branch-one js-image-load"
-                                    src="../static/images/banner-branch-left.png" alt="Grana">
-                                <picture>
-                                    <source
-                                        srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/banner-bush-mobile.png"
-                                        type="image/png" media="(max-width: 767px)">
-                                    <img class="banner-bush__img | js-banner-bush js-image-load js-image-load-mobile"
-                                        src="../static/images/banner-bush.png" alt="Zbun">
-                                </picture>
-                            </div>
-                            <div class="banner__leafs">
-
-                                <img class="banner__butterfly | js-banner-butterfly" src="https://www.jazakvoda.rs/"
-                                    data-src="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/butterfly.gif"
-                                    alt="Leptiri">
-                            </div>
+                            <svg class="water-svg">
+                                <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+                                    <feturbulence id="sea-filter" numOctaves="1" seed="2" baseFrequency="0.02 0.05">
+                                    </feturbulence>
+                                    <fedisplacementmap in2="turbulence" scale="30" in="SourceGraphic">
+                                    </fedisplacementmap>
+                                    <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="60s"
+                                        keyTimes="0;0.5;1" values="0.02 0.25;0.02 0.55;0.02 0.25"
+                                        repeatCount="indefinite"></animate>
+                                </filter>
+                            </svg>
                             <picture>
+
                                 <source
-                                    srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/banner-tree-left.webp"
+                                    srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/hero-back.webp"
                                     type="image/webp" media="(min-width: 768px)">
                                 <source
-                                    srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/banner-tree-left-mobile.png"
+                                    srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/vitaminska-leaf-one.png"
                                     type="image/png" media="(max-width: 767px)">
-                                <img class="banner-tree-left__img | js-banner-tree-left js-image-load js-image-load-mobile"
-                                    src="../static/images/banner-tree-left.png" alt="Zbunje">
+                                <img class="banner-hero__img-back | js-image-load"
+                                    src="../static/images/hero-back.png" alt="Zbunje">
                             </picture>
+                            <div class="banner-hero__clouds">
+                                <img class="banner-hero__img-clouds | js-hero-cloud-one js-image-load"
+                                    src="../static/images/hero-clouds.png" alt="Oblaci">
+                                <img class="banner-hero__img-clouds-two | js-hero-cloud-two"
+                                    src="../static/images/hero-clouds.png" alt="Oblaci">
+                            </div>
+                        </div>
+                        <div class="banner-bush__box | js-banner-bush-box">
+                            <img class="banner-branch-right__img | js-banner-branch-two js-image-load"
+                                src="../static/images/banner-branch-right.png" alt="Grana">
+                            <img class="banner-branch-left__img | js-banner-branch-one js-image-load"
+                                src="../static/images/banner-branch-left.png" alt="Grana">
                             <picture>
                                 <source
-                                    srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/banner-tree-right.webp"
-                                    type="image/webp" media="(min-width: 768px)">
-                                <source
-                                    srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/banner-tree-right-mobile.png"
+                                    srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/banner-bush-mobile.png"
                                     type="image/png" media="(max-width: 767px)">
-                                <img class="banner-tree-right__img | js-banner-tree-right js-image-load js-image-load-mobile"
-                                    src="../static/images/banner-tree-right.png" alt="Zbunje">
+                                <img class="banner-bush__img | js-banner-bush js-image-load js-image-load-mobile"
+                                    src="../static/images/banner-bush.png" alt="Zbun">
                             </picture>
-                            <img class="banner-waterfall | js-gif" src="https://www.jazakvoda.rs/"
-                                data-src="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/waterfall.gif"
-                                alt="waterfall">
-                            <img class="banner-logo__img | js-banner-logo js-image-load" src="../../static/crop.png"
-                                alt="Jazak logo">
-                            <img class="simbol__img | js-simbol js-image-load"
-                                src="../static/assets/images/wra-logo.png" alt="Simbol">
                         </div>
-                        <div class="about-text about-text--one | js-about-one">
-                            <div class="about-text__leafs | js-about-leafs">
-                                <img class="about-text__leafs-one | js-about-leaf-one js-image-load"
-                                    src="../static/images/about-leaf-one.png" alt="List">
-                                <img class="about-text__leafs-two | js-about-leaf-two js-image-load"
-                                    src="../static/images/about-leaf-two.png" alt="List">
-                                <img class="about-text__leafs-three | js-about-leaf-three js-image-load"
-                                    src="../static/images/about-leaf-three.png" alt="List">
-                                <img class="about-text__leafs-four | js-about-leaf-four js-image-load"
-                                    src="../static/images/about-leaf-four.png" alt="List">
-                                <img class="about-text__leafs-five | js-about-leaf-five js-image-load"
-                                    src="../static/images/about-leaf-five.png" alt="List">
-                                <img class="about-text__leafs-six | js-about-leaf-six js-image-load"
-                                    src="../static/images/about-leaf-six.png" alt="List">
-                                <img class="about-text__leafs-seven | js-about-leaf-seven js-image-load"
-                                    src="../static/images/about-leaf-seven.png" alt="List">
-                                <img class="about-text__leafs-eight | js-about-leaf-eight js-image-load"
-                                    src="../static/images/about-leaf-eight.png" alt="List">
-                            </div>
-                            <div class="about-text__inner">
+                        <div class="banner__leafs">
 
-                                <div class="about-text__left">
-                                    <h3 class="about-text__heading qanelas-28-bold | js-about-heading">
-                                        Water <br> Resource Authority</h3>
-                                </div>
-                                <div class="about-text__right cream-16-normal | js-about-right">
-                                    <p>Water Resources Authority (WRA) is a state corporation established under Section
-                                        11 of the <a
-                                            href="https://wra.go.ke/wp-content/uploads/2019/05/The_Water_Act_2016.pdf"
-                                            target="_blank" rel="noopener noreferrer">Water Act, 2016</a>. it is
-                                        mandated through delegated Authority on behalf of the National government to
-                                        safeguard the right to clean water by ensuring that there is proper regulation
-                                        of the management and use of water resources, in order to ensure sufficient
-                                        water for everyone- now and in the future.</p>
-                                    <p>However, the Authority has been in existence for 12 years following its
-                                        establishment under the Water Act, 2002 as Water Resources Management Authority
-                                        (WRMA).</p>
-                                </div>
-                            </div>
-                            <picture>
-                                <source srcset="../static/assets/images/about3-text.png" type="image/png"
-                                    media="(min-width: 768px)">
-                                <source srcset="../static/assets/images/about-text-mobile.png" type="image/png"
-                                    media="(max-width: 767px)">
-                                <img class="about-text__img | js-image-load js-image-load-mobile"
-                                    src="../static/images/about3-text.png" alt="Zbunje">
-                            </picture>
-                            <img class="about-text__branch | js-about-text-branch js-image-load"
-                                src="../static/images/about-text-branch.png" alt="Zbunje">
+                            <img class="banner__butterfly | js-banner-butterfly" src="https://www.jazakvoda.rs/"
+                                data-src="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/butterfly.gif"
+                                alt="Leptiri">
                         </div>
-
+                        <picture>
+                            <source
+                                srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/banner-tree-left.webp"
+                                type="image/webp" media="(min-width: 768px)">
+                            <source
+                                srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/banner-tree-left-mobile.png"
+                                type="image/png" media="(max-width: 767px)">
+                            <img class="banner-tree-left__img | js-banner-tree-left js-image-load js-image-load-mobile"
+                                src="../static/images/banner-tree-left.png" alt="Zbunje">
+                        </picture>
+                        <picture>
+                            <source
+                                srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/banner-tree-right.webp"
+                                type="image/webp" media="(min-width: 768px)">
+                            <source
+                                srcset="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/banner-tree-right-mobile.png"
+                                type="image/png" media="(max-width: 767px)">
+                            <img class="banner-tree-right__img | js-banner-tree-right js-image-load js-image-load-mobile"
+                                src="../static/images/banner-tree-right.png" alt="Zbunje">
+                        </picture>
+                        <img class="banner-waterfall | js-gif" src="https://www.jazakvoda.rs/"
+                            data-src="https://www.jazakvoda.rs/wp-content/themes/Jazak/assets/images/waterfall.gif"
+                            alt="waterfall">
+                        <img class="banner-logo__img | js-banner-logo js-image-load" src="../../static/crop.png"
+                            alt="Jazak logo">
+                        <img class="simbol__img | js-simbol js-image-load"
+                            src="../static/assets/images/wra-logo.png" alt="Simbol">
                     </div>
-                    <div class="content-triggers">
-                        <div class="skip-target | js-skip-target"></div>
-                        <div class="about-heading-trigger | js-about-heading-trigger"></div>
-                        <div class="fruska-gora-trigger | js-fruska-gora-target"></div>
-                        <div class="negazirana-trigger | js-negazirana-target"></div>
-                        <div class="vitaminska-trigger | js-vitaminska-target"></div>
-                        <div class="about-branch-trigger | js-about-branch-trigger"></div>
-                        <div class="about2-heading-trigger | js-about2-heading-trigger"></div>
-                        <div class="about3-heading-trigger | js-about3-heading-trigger"></div>
-                        <div class="about4-heading-trigger | js-about4-heading-trigger"></div>
-                        <div class="imuno-flasa-trigger | js-imuno-flasa-trigger"></div>
-                        <div class="imuno-flasa-target | js-imuno-flasa-target"></div>
-                        <div class="watterfal-trigger-one | js-watterfal-trigger-one"></div>
+                    <div class="about-text about-text--one | js-about-one">
+                        <div class="about-text__leafs | js-about-leafs">
+                            <img class="about-text__leafs-one | js-about-leaf-one js-image-load"
+                                src="../static/images/about-leaf-one.png" alt="List">
+                            <img class="about-text__leafs-two | js-about-leaf-two js-image-load"
+                                src="../static/images/about-leaf-two.png" alt="List">
+                            <img class="about-text__leafs-three | js-about-leaf-three js-image-load"
+                                src="../static/images/about-leaf-three.png" alt="List">
+                            <img class="about-text__leafs-four | js-about-leaf-four js-image-load"
+                                src="../static/images/about-leaf-four.png" alt="List">
+                            <img class="about-text__leafs-five | js-about-leaf-five js-image-load"
+                                src="../static/images/about-leaf-five.png" alt="List">
+                            <img class="about-text__leafs-six | js-about-leaf-six js-image-load"
+                                src="../static/images/about-leaf-six.png" alt="List">
+                            <img class="about-text__leafs-seven | js-about-leaf-seven js-image-load"
+                                src="../static/images/about-leaf-seven.png" alt="List">
+                            <img class="about-text__leafs-eight | js-about-leaf-eight js-image-load"
+                                src="../static/images/about-leaf-eight.png" alt="List">
+                        </div>
+                        <div class="about-text__inner">
+
+                            <!-- <div class="about-text__left">
+                                <h3 class="about-text__heading qanelas-28-bold | js-about-heading">
+                                    Water <br> Resource Authority</h3>
+                            </div>
+                            <div class="about-text__right cream-16-normal | js-about-right">
+                                <p>Water Resources Authority (WRA) is a state corporation established under Section
+                                    11 of the <a
+                                        href="https://wra.go.ke/wp-content/uploads/2019/05/The_Water_Act_2016.pdf"
+                                        target="_blank" rel="noopener noreferrer">Water Act, 2016</a>. it is
+                                    mandated through delegated Authority on behalf of the National government to
+                                    safeguard the right to clean water by ensuring that there is proper regulation
+                                    of the management and use of water resources, in order to ensure sufficient
+                                    water for everyone- now and in the future.</p>
+                                <p>However, the Authority has been in existence for 12 years following its
+                                    establishment under the Water Act, 2002 as Water Resources Management Authority
+                                    (WRMA).</p>
+                            </div> -->
+                        </div>
+                        <picture>
+                            <source srcset="../static/assets/images/about3-text.png" type="image/png"
+                                media="(min-width: 768px)">
+                            <source srcset="../static/assets/images/about-text-mobile.png" type="image/png"
+                                media="(max-width: 767px)">
+                            <img class="about-text__img | js-image-load js-image-load-mobile"
+                                src="../static/images/about3-text.png" alt="Zbunje">
+                        </picture>
+                        <img class="about-text__branch | js-about-text-branch js-image-load"
+                            src="../static/images/about-text-branch.png" alt="Zbunje">
                     </div>
+
                 </div>
-                <div class="music">
+                <div class="content-triggers">
+                    <div class="skip-target | js-skip-target"></div>
+                    <div class="about-heading-trigger | js-about-heading-trigger"></div>
+                    <div class="fruska-gora-trigger | js-fruska-gora-target"></div>
+                    <div class="negazirana-trigger | js-negazirana-target"></div>
+                    <div class="vitaminska-trigger | js-vitaminska-target"></div>
+                    <div class="about-branch-trigger | js-about-branch-trigger"></div>
+                    <div class="about2-heading-trigger | js-about2-heading-trigger"></div>
+                    <div class="about3-heading-trigger | js-about3-heading-trigger"></div>
+                    <div class="about4-heading-trigger | js-about4-heading-trigger"></div>
+                    <div class="imuno-flasa-trigger | js-imuno-flasa-trigger"></div>
+                    <div class="imuno-flasa-target | js-imuno-flasa-target"></div>
+                    <div class="watterfal-trigger-one | js-watterfal-trigger-one"></div>
                 </div>
+            </div>
+            <div class="music">
+            </div>
 
-            </main>
+        </main>
 
-            <script src="../static/imagesloaded.pkgd.min.js"></script>
-            <script>
-                var counter = 0;
-                var ua = window.navigator.userAgent;
-                var msie = ua.indexOf("MSIE ");
-                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+        <script src="../static/imagesloaded.pkgd.min.js"></script>
+        <script>
+            var counter = 0;
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
 
-                    counter = 1;
+                counter = 1;
+            }
+            window.loaded = false;
+            var images;
+            if (window.innerWidth > 767) {
+                images = document.querySelectorAll('.js-image-load')
+
+            } else {
+                images = document.querySelectorAll('.js-image-load-mobile')
+            }
+            var wave = document.querySelector('.js-wave');
+            var main = document.querySelector('.js-site');
+            var percentage = document.querySelector('.js-loader-percentage');
+
+            var imgLoad = imagesLoaded(images);
+            imgLoad.on('progress', function (instance, image) {
+                counter++;
+                var percentageResult = counter / images.length;
+                wave.style.height = ((percentageResult) * 360) + 'px';
+                wave.style.y = (290 - ((percentageResult) * 360)) + 'px';
+                var inHtml = (Math.round(percentageResult * 100))
+                if (inHtml > 100) {
+                    inHtml = 100
                 }
-                window.loaded = false;
-                var images;
-                if (window.innerWidth > 767) {
-                    images = document.querySelectorAll('.js-image-load')
+                percentage.innerHTML = inHtml;
+            });
 
-                } else {
-                    images = document.querySelectorAll('.js-image-load-mobile')
-                }
-                var wave = document.querySelector('.js-wave');
-                var main = document.querySelector('.js-site');
-                var percentage = document.querySelector('.js-loader-percentage');
-
-                var imgLoad = imagesLoaded(images);
-                imgLoad.on('progress', function (instance, image) {
-                    counter++;
-                    var percentageResult = counter / images.length;
-                    wave.style.height = ((percentageResult) * 360) + 'px';
-                    wave.style.y = (290 - ((percentageResult) * 360)) + 'px';
-                    var inHtml = (Math.round(percentageResult * 100))
-                    if (inHtml > 100) {
-                        inHtml = 100
-                    }
-                    percentage.innerHTML = inHtml;
-                });
-
-                imgLoad.on('done', function (instance) {
-                    window.loaded = true;
-                });
-            </script>
+            imgLoad.on('done', function (instance) {
+                window.loaded = true;
+            });
+        </script>
 
 
 
 
-        </div><!-- #content -->
+    </div><!-- #content -->
 
-    </div><!-- #page -->
+</div><!-- #page -->
 
 
-    <aside id="moove_gdpr_cookie_info_bar"
-        class="moove-gdpr-info-bar-hidden moove-gdpr-align-center moove-gdpr-light-scheme gdpr_infobar_postion_bottom"
-        role="note" aria-label="GDPR Cookie Banner" style="display: none;">
-        <div class="moove-gdpr-info-bar-container">
-            <div class="moove-gdpr-info-bar-content">
+<aside id="moove_gdpr_cookie_info_bar"
+    class="moove-gdpr-info-bar-hidden moove-gdpr-align-center moove-gdpr-light-scheme gdpr_infobar_postion_bottom"
+    role="note" aria-label="GDPR Cookie Banner" style="display: none;">
+    <div class="moove-gdpr-info-bar-container">
+        <div class="moove-gdpr-info-bar-content">
 
-                <div class="moove-gdpr-cookie-notice">
-                    <p>In order to provide you with a better user experience, this site uses cookies (cookies). <a
-                            href="/">Use of cookies</a></p>
-                    <button class="moove-gdpr-infobar-close-btn gdpr-content-close-btn"
-                        aria-label="Close GDPR Cookie Banner">
-                        <span class="gdpr-sr-only">Close GDPR Cookie Banner</span>
-                        <i class="moovegdpr-arrow-close"></i>
-                    </button>
-                </div>
-                <!--  .moove-gdpr-cookie-notice -->
-                <div class="moove-gdpr-button-holder">
-                    <button class="mgbutton moove-gdpr-infobar-allow-all" aria-label="I ACCEPT ALL COOKIES
-                    ">I ACCEPT ALL COOKIES
-                    </button>
-                    <button class="mgbutton moove-gdpr-infobar-settings-btn change-settings-button"
-                        data-href="#moove_gdpr_cookie_modal" aria-label="PODEŠAVANJA">SETTINGS</button>
-                    <button class="moove-gdpr-infobar-close-btn" aria-label="Close GDPR Cookie Banner">
-                        <span class="gdpr-sr-only">Close GDPR Cookie Banner</span>
-                        <i class="moovegdpr-arrow-close"></i>
-                    </button>
-                </div>
-                <!--  .button-container -->
+            <div class="moove-gdpr-cookie-notice">
+                <p>In order to provide you with a better user experience, this site uses cookies (cookies). <a
+                        href="/">Use of cookies</a></p>
+                <button class="moove-gdpr-infobar-close-btn gdpr-content-close-btn"
+                    aria-label="Close GDPR Cookie Banner">
+                    <span class="gdpr-sr-only">Close GDPR Cookie Banner</span>
+                    <i class="moovegdpr-arrow-close"></i>
+                </button>
             </div>
-            <!-- moove-gdpr-info-bar-content -->
+            <!--  .moove-gdpr-cookie-notice -->
+            <div class="moove-gdpr-button-holder">
+                <button class="mgbutton moove-gdpr-infobar-allow-all" aria-label="I ACCEPT ALL COOKIES
+                ">I ACCEPT ALL COOKIES
+                </button>
+                <button class="mgbutton moove-gdpr-infobar-settings-btn change-settings-button"
+                    data-href="#moove_gdpr_cookie_modal" aria-label="PODEŠAVANJA">SETTINGS</button>
+                <button class="moove-gdpr-infobar-close-btn" aria-label="Close GDPR Cookie Banner">
+                    <span class="gdpr-sr-only">Close GDPR Cookie Banner</span>
+                    <i class="moovegdpr-arrow-close"></i>
+                </button>
+            </div>
+            <!--  .button-container -->
         </div>
-        <!-- moove-gdpr-info-bar-container -->
-    </aside>
-
-
-    <!-- #moove_gdpr_cookie_info_bar -->
-    <script type="text/javascript" src="../static/regenerator-runtime.min.js" id="regenerator-runtime-js"></script>
-    <script type="text/javascript" src="../static/wp-polyfill.min.js" id="wp-polyfill-js"></script>
-    <script type="text/javascript" id="contact-form-7-js-extra">
-        /* <![CDATA[ */
-        var wpcf7 = { "api": { "root": "https:\/\/www.jazakvoda.rs\/wp-json\/", "namespace": "contact-form-7\/v1" } };
-/* ]]> */
-    </script>
-    <script type="text/javascript" src="../static/index.js" id="contact-form-7-js"></script>
-    <script type="text/javascript" src="../static/site.min.js" id="Jazak-site-js-js"></script>
-    <!-- <script type="text/javascript" src="../static/api.js" id="google-recaptcha-js"></script> -->
-    <!-- <script type="text/javascript" id="wpcf7-recaptcha-js-extra">
-        /* <![CDATA[ */
-        var wpcf7_recaptcha = { "sitekey": "6Lf_I7oaAAAAAHI3mEoL7vCWCpi96x4r0jsmfwZk", "actions": { "homepage": "homepage", "contactform": "contactform" } };
-/* ]]> */
-    </script> -->
-    <!-- <script type="text/javascript" src="../static/index(1).js" id="wpcf7-recaptcha-js"></script> -->
-    <script type="text/javascript" src="../static/jquery.min.js" id="jquery-core-js"></script>
-    <script type="text/javascript" src="../static/jquery-migrate.min.js" id="jquery-migrate-js"></script>
-    <!-- <script type="text/javascript" id="moove_gdpr_frontend-js-extra">
-        /* <![CDATA[ */
-        var moove_frontend_gdpr_scripts = { "ajaxurl": "https:\/\/www.wra.go.ke\/wp-admin\/admin-ajax.php", "post_id": "7", "plugin_dir": "https:\/\/www.jazakvoda.rs\/wp-content\/plugins\/gdpr-cookie-compliance", "show_icons": "all", "is_page": "1", "strict_init": "2", "enabled_default": { "third_party": 0, "advanced": 0 }, "geo_location": "false", "force_reload": "false", "is_single": "", "hide_save_btn": "false", "current_user": "0", "cookie_expiration": "365", "script_delay": "2000", "wp_lang": "" };
-/* ]]> */
-    </script> -->
-    <script type="text/javascript" src="../static/main.js" id="moove_gdpr_frontend-js"></script>
-
-    <button data-href="#moove_gdpr_cookie_modal" id="moove_gdpr_save_popup_settings_button"
-        style="bottom: 20px; left: 20px; display: inline-block;" class=" gdpr-floating-button-custom-position"
-        aria-label="Change cookie settings">
-        <span class="moove_gdpr_icon">
-
-        </span>
-        <span class="moove_gdpr_text">Change cookie settings</span>
-    </button>
-
-    <!-- V1 -->
-    <div id="moove_gdpr_cookie_modal" class="gdpr_lightbox-hide" role="complementary" aria-label="GDPR Settings Screen">
-        <div class="moove-gdpr-modal-content moove-clearfix logo-position-center moove_gdpr_modal_theme_v1">
-            <button class="moove-gdpr-modal-close" aria-label="Close GDPR Cookie Settings">
-                <span class="gdpr-sr-only">Close GDPR Cookie Settings</span>
-                <span class="gdpr-icon moovegdpr-arrow-close"></span>
-            </button>
-            <div class="moove-gdpr-modal-left-content">
-
-                <div class="moove-gdpr-company-logo-holder">
-                    <img src="static/uploads/2021/02/banner-logo.png" alt="" width="126" height="49"
-                        class="img-responsive" />
-                </div>
-                <!--  .moove-gdpr-company-logo-holder -->
-                <ul id="moove-gdpr-menu">
-
-                    <li class="menu-item-on menu-item-privacy_overview menu-item-selected">
-                        <button data-href="#privacy_overview" class="moove-gdpr-tab-nav"
-                            aria-label="Politika upravljanja kolačićima">
-                            <span class="gdpr-svg-icon">
-                                <svg class="icon icon-privacy-overview" viewBox="0 0 26 32">
-                                    <path
-                                        d="M11.082 27.443l1.536 0.666 1.715-0.717c5.018-2.099 8.294-7.014 8.294-12.442v-5.734l-9.958-5.325-9.702 5.325v5.862c0 5.376 3.2 10.24 8.115 12.365zM4.502 10.138l8.166-4.506 8.397 4.506v4.813c0 4.838-2.893 9.19-7.347 11.034l-1.101 0.461-0.922-0.41c-4.352-1.894-7.194-6.195-7.194-10.957v-4.941zM12.029 14.259h1.536v7.347h-1.536v-7.347zM12.029 10.394h1.536v2.483h-1.536v-2.483z"
-                                        fill="currentColor"></path>
-                                </svg>
-                            </span>
-                            <span class="gdpr-nav-tab-title">Cookie management policy
-                            </span>
-                        </button>
-                    </li>
-
-                    <li class="menu-item-strict-necessary-cookies menu-item-off">
-                        <button data-href="#strict-necessary-cookies" class="moove-gdpr-tab-nav"
-                            aria-label="Neophodni kolačići">
-                            <span class="gdpr-svg-icon">
-                                <svg class="icon icon-strict-necessary" viewBox="0 0 26 32">
-                                    <path
-                                        d="M22.685 5.478l-9.984 10.752-2.97-4.070c-0.333-0.461-0.973-0.538-1.434-0.205-0.435 0.333-0.538 0.947-0.23 1.408l3.686 5.094c0.179 0.256 0.461 0.41 0.768 0.435h0.051c0.282 0 0.538-0.102 0.742-0.307l10.854-11.699c0.358-0.435 0.333-1.075-0.102-1.434-0.384-0.384-0.998-0.358-1.382 0.026v0zM22.301 12.954c-0.563 0.102-0.922 0.64-0.794 1.203 0.128 0.614 0.179 1.229 0.179 1.843 0 5.094-4.122 9.216-9.216 9.216s-9.216-4.122-9.216-9.216 4.122-9.216 9.216-9.216c1.536 0 3.021 0.384 4.378 1.101 0.512 0.23 1.126 0 1.357-0.538 0.205-0.461 0.051-0.998-0.384-1.254-5.478-2.944-12.314-0.922-15.283 4.557s-0.922 12.314 4.557 15.258 12.314 0.922 15.258-4.557c0.896-1.638 1.357-3.482 1.357-5.35 0-0.768-0.077-1.51-0.23-2.253-0.102-0.538-0.64-0.896-1.178-0.794z"
-                                        fill="currentColor"></path>
-                                </svg>
-                            </span>
-                            <span class="gdpr-nav-tab-title">Necessary cookies
-                            </span>
-                        </button>
-                    </li>
-
-
-                    <li class="menu-item-off menu-item-third_party_cookies">
-                        <button data-href="#third_party_cookies" class="moove-gdpr-tab-nav"
-                            aria-label="Analitički kolačići">
-                            <span class="gdpr-svg-icon">
-                                <svg class="icon icon-3rd-party" viewBox="0 0 26 32">
-                                    <path
-                                        d="M25.367 3.231c-0.020 0-0.040 0-0.060 0.020l-4.98 1.080c-0.16 0.040-0.2 0.16-0.080 0.28l1.42 1.42-10.060 10.040 1.14 1.14 10.060-10.060 1.42 1.42c0.12 0.12 0.24 0.080 0.28-0.080l1.060-5.020c0-0.14-0.080-0.26-0.2-0.24zM1.427 6.371c-0.74 0-1.4 0.66-1.4 1.4v19.6c0 0.74 0.66 1.4 1.4 1.4h19.6c0.74 0 1.4-0.66 1.4-1.4v-14.6h-1.6v14.4h-19.2v-19.2h14.38v-1.6h-14.58z"
-                                        fill="currentColor"></path>
-                                </svg>
-                            </span>
-                            <span class="gdpr-nav-tab-title">Analytical cookies</span>
-                        </button>
-                    </li>
-
-                    <li class="menu-item-advanced-cookies menu-item-off">
-                        <button data-href="#advanced-cookies" class="moove-gdpr-tab-nav"
-                            aria-label="Marketinški kolačići">
-                            <span class="gdpr-svg-icon">
-                                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                    <g data-name="1">
-                                        <path
-                                            d="M293.9,450H233.53a15,15,0,0,1-14.92-13.42l-4.47-42.09a152.77,152.77,0,0,1-18.25-7.56L163,413.53a15,15,0,0,1-20-1.06l-42.69-42.69a15,15,0,0,1-1.06-20l26.61-32.93a152.15,152.15,0,0,1-7.57-18.25L76.13,294.1a15,15,0,0,1-13.42-14.91V218.81A15,15,0,0,1,76.13,203.9l42.09-4.47a152.15,152.15,0,0,1,7.57-18.25L99.18,148.25a15,15,0,0,1,1.06-20l42.69-42.69a15,15,0,0,1,20-1.06l32.93,26.6a152.77,152.77,0,0,1,18.25-7.56l4.47-42.09A15,15,0,0,1,233.53,48H293.9a15,15,0,0,1,14.92,13.42l4.46,42.09a152.91,152.91,0,0,1,18.26,7.56l32.92-26.6a15,15,0,0,1,20,1.06l42.69,42.69a15,15,0,0,1,1.06,20l-26.61,32.93a153.8,153.8,0,0,1,7.57,18.25l42.09,4.47a15,15,0,0,1,13.41,14.91v60.38A15,15,0,0,1,451.3,294.1l-42.09,4.47a153.8,153.8,0,0,1-7.57,18.25l26.61,32.93a15,15,0,0,1-1.06,20L384.5,412.47a15,15,0,0,1-20,1.06l-32.92-26.6a152.91,152.91,0,0,1-18.26,7.56l-4.46,42.09A15,15,0,0,1,293.9,450ZM247,420h33.39l4.09-38.56a15,15,0,0,1,11.06-12.91A123,123,0,0,0,325.7,356a15,15,0,0,1,17,1.31l30.16,24.37,23.61-23.61L372.06,328a15,15,0,0,1-1.31-17,122.63,122.63,0,0,0,12.49-30.14,15,15,0,0,1,12.92-11.06l38.55-4.1V232.31l-38.55-4.1a15,15,0,0,1-12.92-11.06A122.63,122.63,0,0,0,370.75,187a15,15,0,0,1,1.31-17l24.37-30.16-23.61-23.61-30.16,24.37a15,15,0,0,1-17,1.31,123,123,0,0,0-30.14-12.49,15,15,0,0,1-11.06-12.91L280.41,78H247l-4.09,38.56a15,15,0,0,1-11.07,12.91A122.79,122.79,0,0,0,201.73,142a15,15,0,0,1-17-1.31L154.6,116.28,131,139.89l24.38,30.16a15,15,0,0,1,1.3,17,123.41,123.41,0,0,0-12.49,30.14,15,15,0,0,1-12.91,11.06l-38.56,4.1v33.38l38.56,4.1a15,15,0,0,1,12.91,11.06A123.41,123.41,0,0,0,156.67,311a15,15,0,0,1-1.3,17L131,358.11l23.61,23.61,30.17-24.37a15,15,0,0,1,17-1.31,122.79,122.79,0,0,0,30.13,12.49,15,15,0,0,1,11.07,12.91ZM449.71,279.19h0Z"
-                                            fill="currentColor" />
-                                        <path
-                                            d="M263.71,340.36A91.36,91.36,0,1,1,355.08,249,91.46,91.46,0,0,1,263.71,340.36Zm0-152.72A61.36,61.36,0,1,0,325.08,249,61.43,61.43,0,0,0,263.71,187.64Z"
-                                            fill="currentColor" />
-                                    </g>
-                                </svg>
-                            </span>
-                            <span class="gdpr-nav-tab-title">Marketing cookies</span>
-                        </button>
-                    </li>
-
-                </ul>
-
-                <div class="moove-gdpr-branding-cnt">
-
-                </div>
-                <!--  .moove-gdpr-branding -->
-            </div>
-            <!--  .moove-gdpr-modal-left-content -->
-            <div class="moove-gdpr-modal-right-content">
-                <div class="moove-gdpr-modal-title">
-
-                </div>
-                <!-- .moove-gdpr-modal-ritle -->
-                <div class="main-modal-content">
-
-                    <div class="moove-gdpr-tab-content">
-
-                        <div id="privacy_overview" class="moove-gdpr-tab-main">
-                            <span class="tab-title">Cookie management policy</span>
-                            <div class="moove-gdpr-tab-main-content">
-                                <br />
-                                <h3>
-                                    About cookies</h3>
-                                <p>When visiting the website <a href="index.html">www.wra.go.ke</a>
-
-                                    whose owner is the information necessary to
-                                    improve your user experience is collected.
-                                    These technologies, which include cookies, pixels, web bookmarks and gifs, are
-                                    collectively referred to in this Cookie Management Policy as "cookies"..</p>
-
-
-                                <p>You can find information on the protection of personal data processed by NIS in our
-                                    Privacy Policy, and if you have any questions regarding the processing of personal
-                                    data, please contact the organization
-                                    part of NIS in charge of personal data protection management, by sending an inquiry
-                                    to the e-mail address <a href="mailto:info@wra.go.ke"> info@wra.go.ke </a></p>
-
-                                <p>By using cookies on our website we may collect information about your computer that
-                                    may include IP address, browser type, domain name,
-                                    access time and website addresses. On the website <a
-                                        href="index.html">www.wra.go.ke</a> The use of cookies is enabled only if you
-                                    have given us your consent for this activity
-                                    by selecting the appropriate option in the cookie management options settings
-                                    section (link to settings).</p>
-
-                                <h3>What are cookies?</h3>
-
-
-                                <p>Cookies are small text databases (files) that are usually downloaded to your
-                                    computer, tablet or mobile device (hereinafter: device) from the Internet sites you
-                                    visit.
-                                    Cookies are used to work on all functions of the website, to achieve a better user
-                                    experience, and also enable the analysis of site visits and advanced online
-                                    advertising.</p>
-
-                                <h3>Types of cookies
-                                </h3>
-
-                                <p>To better understand cookies and how to control them, below you can find out what
-                                    types of cookies exist, as well as how they are used on the website:</p>
-                                <ul>
-                                    <li>First-party cookies Cookies installed on your device by an organization whose
-                                        website you visit are known as first-party cookies..</li>
-                                    <li>Third party cookies Cookies that are installed on your device by another
-                                        organization in relation to the page you are visiting are known as "third party
-                                        cookies"..</li>
-
-
-                                    <li>Persistent cookies Persistent cookies remain stored on your device even after
-                                        you close your browser.
-                                        With the help of these cookies, the website stores data in order to facilitate
-                                        their use. For example,
-                                        Websites that require you to enter your username and password will remember your
-                                        entry, which will appear with each new visit..</li>
-
-
-                                    <li>Temporary cookies ("session cookies") Temporary cookies are removed from your
-                                        device when you close the browser through which you visited a particular
-                                        website.
-                                        These cookies are used by the site to store temporary data for its proper
-                                        functioning.</li>
-                                </ul>
-
-
-                                <h3> Which cookies the website uses <a href="/">www.wra.go.ke</a>?</h3>
-                                <p>Cookies installed on your device by the organization whose website you are visiting
-                                    are known as "first person" cookies.</p>
-                                <ul>
-                                    <li><strong>Necessary cookies</strong> or strictly necessary cookies are cookies
-                                        that are used to make the site work and cannot be turned off.
-                                        You can set your browser to notify you of the use or to block these cookies, but
-                                        in that case some parts of the website will not work.</li>
-
-
-                                    <li><strong>Other cookies</strong> – of permanent cookies NIS uses:
-                                        <ul>
-                                            <li>If you set the language, font size or a specific version of the site
-                                                (eg high contrast mode), setting cookies are used for this
-                                                user interface. After the adjustment is made, it is not necessary to
-                                                state your preferences on your next visit to this site.</li>
-
-                                            <li>If you use parts of the site for which access you need registration, we
-                                                place an authentication cookie on your computer for this purpose. This
-                                                allows you to go and
-                                                return to those parts of the site without re-authentication.</li>
-
-                                            <li>In order to track the number of visits to measure and improve the
-                                                performance of our website, we use first-person cookies.
-                                                Thanks to these cookies, we can determine which pages are popular or
-                                                less popular.
-                                                Also, thanks to them, we can see how visitors navigate the website, that
-                                                is, how they use it.
-                                                All information collected by these cookies is aggregated, and represents
-                                                anonymized data. If you do not allow these cookies, we will not have
-                                                information when you visit our site.</li>
-
-                                            <li>We can also use services such as Google Analytics to track network
-                                                statistics. In this case, Google places a third-party cookie on your
-                                                computer.
-                                                Such a cookie is also set when we use Google Maps.</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <h3>Enabling and disabling cookies</h3>
-
-
-                                <p>On the wra.go.ke website, the user can deactivate or enable cookies at any time
-                                    by changing the settings of the offered cookie management options. If you turn off
-                                    cookies,
-                                    it will not be stored on your internet browser. Cookies can also be turned off via
-                                    Internet browser settings.</p>
-
-
-                                <p> The purpose of cookies is to improve and enable the use of our website and their
-                                    processes, and it should be borne in mind that by preventing or deleting cookies you
-                                    can disable the functioning
-                                    all parts of the page or cause them to work differently and look in the internet
-                                    browser.</p>
-
-
-                                <p>If you turn off advertising cookies, it is possible that our ads will show less
-                                    relevant content for you, or that the same ad may be shown to you more times than
-                                    you wish.</p>
-
-
-                                <p>Internet browsers allow you to change your cookie settings. The settings are usually
-                                    in the "Options" menu or "Preferences".
-                                    The links below may be helpful if the user wants to better understand these
-                                    settings:</p>
-                                <ul>
-                                    <li><a href="https://support.google.com/chrome/answer/95647?hl=en">cookie settings
-                                            in Chrome</a></li>
-                                    <li><a href="https://support.apple.com/en-us/HT201265">cookie settings in Safari</a>
-                                    </li>
-                                    <li><a
-                                            href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&amp;redirectslug=Cookies">setting
-                                            cookies in Firefox</a></li>
-                                    <li><a
-                                            href="https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies">
-                                            Setting cookies in Internet Explorer</a></li>
-                                </ul>
-                                <p>You can also use the site as a source of additional information for managing cookies
-                                    &lt;a href=“http://www.aboutcookies.org/“&gt; www.aboutcookies.org &lt;/a&gt;.</p>
-                                <h3>Additional information about cookies</h3>
-
-                                <p>Social networks may also place cookies on your computer. This happens on websites
-                                    that allow you to log in and
-                                    registration via social media accounts, and if you share the content of the website
-                                    on social networks.
-                                    The specific impact on your privacy will vary from social network to social network
-                                    and depends on your privacy settings
-                                    which you have chosen on these networks. You can find out how to manage these
-                                    cookies on the websites of these social networks.</p>
-                                <p>You can find out more information about cookies and privacy policy at the following
-                                    links:</p>
-                                <ul>
-                                    <li><a href="https://policies.google.com/privacy?hl=sr-Latn&amp;gl=rs">Google's
-                                            Privacy Policy</a></li>
-                                    <li><a href="https://policies.google.com/technologies/types?hl=sr-Latn&amp;gl=rs">Types
-                                            of cookies used by Google</a></li>
-                                    <li><a href="https://www.facebook.com/policies/cookies/">Facebook cookies and other
-                                            storage technologies</a></li>
-                                </ul>
-                            </div>
-                            <!--  .moove-gdpr-tab-main-content -->
-
-                        </div>
-                        <!-- #privacy_overview -->
-                        <div id="strict-necessary-cookies" class="moove-gdpr-tab-main" style="display:none">
-                            <span class="tab-title"></span>
-                            <div class="moove-gdpr-tab-main-content">
-                                <p>Necessary cookies or strictly necessary cookies are cookies that are used to make the
-                                    site work and cannot be turned off.
-                                    You can set your browser to notify you about the use or to block these cookies,
-                                    but in that case some parts of the website will not work.</p>
-                                <div class="moove-gdpr-status-bar gdpr-checkbox-disabled checkbox-selected">
-                                    <div class="gdpr-cc-form-wrap">
-                                        <div class="gdpr-cc-form-fieldset">
-                                            <label class="cookie-switch" for="moove_gdpr_strict_cookies">
-                                                <span class="gdpr-sr-only">Enable or Disable Cookies</span>
-                                                <input type="checkbox" aria-label="Neophodni kolačići" disabled
-                                                    checked="checked" value="check" name="moove_gdpr_strict_cookies"
-                                                    id="moove_gdpr_strict_cookies">
-                                                <span class="cookie-slider cookie-round" data-text-enable="Uključeno"
-                                                    data-text-disabled="Isključeno"></span>
-                                            </label>
-                                        </div>
-                                        <!-- .gdpr-cc-form-fieldset -->
-                                    </div>
-                                    <!-- .gdpr-cc-form-wrap -->
-                                </div>
-                                <!-- .moove-gdpr-status-bar -->
-                                <div class="moove-gdpr-strict-warning-message" style="margin-top: 10px;">
-                                    <p>If you disable this cookie, we will not be able to save your preferences. This
-                                        means that every time you visit this website you will need to enable or disable
-                                        cookies again.</p>
-                                </div>
-                                <!--  .moove-gdpr-tab-main-content -->
-
-                            </div>
-                            <!--  .moove-gdpr-tab-main-content -->
-                        </div>
-                        <!-- #strict-necesarry-cookies -->
-
-                        <div id="third_party_cookies" class="moove-gdpr-tab-main" style="display:none">
-                            <span class="tab-title">Analytical cookies</span>
-                            <div class="moove-gdpr-tab-main-content">
-                                <p>Analytical cookies are small pieces of data that give us the ability to recognize and
-                                    remember users.
-                                    They are placed on your computer, tablet or mobile device via a browser.
-                                    They enable the provision of personalized service on web pages because they track
-                                    which parts of the web page users visit,
-                                    they also help measure ad and search effectiveness. Based on this information, it is
-                                    possible to improve communication and products.</p>
-                                <div class="moove-gdpr-status-bar">
-                                    <div class="gdpr-cc-form-wrap">
-                                        <div class="gdpr-cc-form-fieldset">
-                                            <label class="cookie-switch" for="moove_gdpr_performance_cookies">
-                                                <span class="gdpr-sr-only">Enable or Disable Cookies</span>
-                                                <input type="checkbox" aria-label="Analitički kolačići" value="check"
-                                                    name="moove_gdpr_performance_cookies"
-                                                    id="moove_gdpr_performance_cookies">
-                                                <span class="cookie-slider cookie-round" data-text-enable="Uključeno"
-                                                    data-text-disabled="Isključeno"></span>
-                                            </label>
-                                        </div>
-                                        <!-- .gdpr-cc-form-fieldset -->
-                                    </div>
-                                    <!-- .gdpr-cc-form-wrap -->
-                                </div>
-                                <!-- .moove-gdpr-status-bar -->
-                                <div class="moove-gdpr-strict-secondary-warning-message"
-                                    style="margin-top: 10px; display: none;">
-                                    <p>Please enable Strictly Necessary Cookies first so that we can save your
-                                        preferences!</p>
-                                </div>
-                                <!--  .moove-gdpr-tab-main-content -->
-
-                            </div>
-                            <!--  .moove-gdpr-tab-main-content -->
-                        </div>
-                        <!-- #third_party_cookies -->
-
-                        <div id="advanced-cookies" class="moove-gdpr-tab-main" style="display:none">
-                            <span class="tab-title">Marketing cookies</span>
-                            <div class="moove-gdpr-tab-main-content">
-                                <p>Social networks may also place cookies on your computer. This happens on websites
-                                    that allow you to log in
-                                    and registration through social media accounts, and if you share the content of the
-                                    website on social networks. Concrete impact
-                                    your privacy will vary from social network to social network and depends on the
-                                    privacy settings you choose
-                                    on those networks. You can find out how to manage these cookies on the websites of
-                                    these social networks.</p>
-                                <div class="moove-gdpr-status-bar">
-                                    <div class="gdpr-cc-form-wrap">
-                                        <div class="gdpr-cc-form-fieldset">
-                                            <label class="cookie-switch" for="moove_gdpr_advanced_cookies">
-                                                <span class="gdpr-sr-only">Enable or Disable Cookies</span>
-                                                <input type="checkbox" aria-label="Marketing Cookies" value="check"
-                                                    name="moove_gdpr_advanced_cookies" id="moove_gdpr_advanced_cookies">
-                                                <span class="cookie-slider cookie-round" data-text-enable="Uključeno"
-                                                    data-text-disabled="Isključeno"></span>
-                                            </label>
-                                        </div>
-                                        <!-- .gdpr-cc-form-fieldset -->
-                                    </div>
-                                    <!-- .gdpr-cc-form-wrap -->
-                                </div>
-                                <!-- .moove-gdpr-status-bar -->
-                                <div class="moove-gdpr-strict-secondary-warning-message"
-                                    style="margin-top: 10px; display: none;">
-                                    <p>Please enable Strictly Necessary Cookies first so that we can save your
-                                        preferences!</p>
-                                </div>
-                                <!--  .moove-gdpr-strict-secondary-warning-message -->
-
-                            </div>
-                            <!--  .moove-gdpr-tab-main-content -->
-                        </div>
-                        <!-- #advanced-cookies -->
-
-                    </div>
-                    <!--  .moove-gdpr-tab-content -->
-                </div>
-                <!--  .main-modal-content -->
-                <div class="moove-gdpr-modal-footer-content">
-                    <div class="moove-gdpr-button-holder">
-                        <button class="mgbutton moove-gdpr-modal-allow-all button-visible"
-                            aria-label="Accept All Cookies">ACCEPT ALL COOKIES</button>
-
-
-                        <button class="mgbutton moove-gdpr-modal-save-settings button-visible"
-                            aria-label="Save Settings">SAVE SETTINGS</button>
-                    </div>
-                    <!--  .moove-gdpr-button-holder -->
-                </div>
-                <!--  .moove-gdpr-modal-footer-content -->
-            </div>
-            <!--  .moove-gdpr-modal-right-content -->
-
-            <div class="moove-clearfix"></div>
-
-        </div>
-        <!--  .moove-gdpr-modal-content -->
+        <!-- moove-gdpr-info-bar-content -->
     </div>
-    <!-- #moove_gdpr_cookie_modal -->
+    <!-- moove-gdpr-info-bar-container -->
+</aside>
+
+
+<!-- #moove_gdpr_cookie_info_bar -->
+<script type="text/javascript" src="../static/regenerator-runtime.min.js" id="regenerator-runtime-js"></script>
+<script type="text/javascript" src="../static/wp-polyfill.min.js" id="wp-polyfill-js"></script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+    /* <![CDATA[ */
+    var wpcf7 = { "api": { "root": "https:\/\/www.jazakvoda.rs\/wp-json\/", "namespace": "contact-form-7\/v1" } };
+/* ]]> */
+</script>
+<script type="text/javascript" src="../static/index.js" id="contact-form-7-js"></script>
+<script type="text/javascript" src="../static/site.min.js" id="Jazak-site-js-js"></script>
+<!-- <script type="text/javascript" src="../static/api.js" id="google-recaptcha-js"></script> -->
+<!-- <script type="text/javascript" id="wpcf7-recaptcha-js-extra">
+    /* <![CDATA[ */
+    var wpcf7_recaptcha = { "sitekey": "6Lf_I7oaAAAAAHI3mEoL7vCWCpi96x4r0jsmfwZk", "actions": { "homepage": "homepage", "contactform": "contactform" } };
+/* ]]> */
+</script> -->
+<!-- <script type="text/javascript" src="../static/index(1).js" id="wpcf7-recaptcha-js"></script> -->
+<script type="text/javascript" src="../static/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="../static/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<!-- <script type="text/javascript" id="moove_gdpr_frontend-js-extra">
+    /* <![CDATA[ */
+    var moove_frontend_gdpr_scripts = { "ajaxurl": "https:\/\/www.wra.go.ke\/wp-admin\/admin-ajax.php", "post_id": "7", "plugin_dir": "https:\/\/www.jazakvoda.rs\/wp-content\/plugins\/gdpr-cookie-compliance", "show_icons": "all", "is_page": "1", "strict_init": "2", "enabled_default": { "third_party": 0, "advanced": 0 }, "geo_location": "false", "force_reload": "false", "is_single": "", "hide_save_btn": "false", "current_user": "0", "cookie_expiration": "365", "script_delay": "2000", "wp_lang": "" };
+/* ]]> */
+</script> -->
+<script type="text/javascript" src="../static/main.js" id="moove_gdpr_frontend-js"></script>
+
+<button data-href="#moove_gdpr_cookie_modal" id="moove_gdpr_save_popup_settings_button"
+    style="bottom: 20px; left: 20px; display: inline-block;" class=" gdpr-floating-button-custom-position"
+    aria-label="Change cookie settings">
+    <span class="moove_gdpr_icon">
+
+    </span>
+    <span class="moove_gdpr_text">Change cookie settings</span>
+</button>
+
+<!-- V1 -->
+<div id="moove_gdpr_cookie_modal" class="gdpr_lightbox-hide" role="complementary" aria-label="GDPR Settings Screen">
+    <div class="moove-gdpr-modal-content moove-clearfix logo-position-center moove_gdpr_modal_theme_v1">
+        <button class="moove-gdpr-modal-close" aria-label="Close GDPR Cookie Settings">
+            <span class="gdpr-sr-only">Close GDPR Cookie Settings</span>
+            <span class="gdpr-icon moovegdpr-arrow-close"></span>
+        </button>
+        <div class="moove-gdpr-modal-left-content">
+
+            <div class="moove-gdpr-company-logo-holder">
+                <img src="static/uploads/2021/02/banner-logo.png" alt="" width="126" height="49"
+                    class="img-responsive" />
+            </div>
+            <!--  .moove-gdpr-company-logo-holder -->
+            <ul id="moove-gdpr-menu">
+
+                <li class="menu-item-on menu-item-privacy_overview menu-item-selected">
+                    <button data-href="#privacy_overview" class="moove-gdpr-tab-nav"
+                        aria-label="Politika upravljanja kolačićima">
+                        <span class="gdpr-svg-icon">
+                            <svg class="icon icon-privacy-overview" viewBox="0 0 26 32">
+                                <path
+                                    d="M11.082 27.443l1.536 0.666 1.715-0.717c5.018-2.099 8.294-7.014 8.294-12.442v-5.734l-9.958-5.325-9.702 5.325v5.862c0 5.376 3.2 10.24 8.115 12.365zM4.502 10.138l8.166-4.506 8.397 4.506v4.813c0 4.838-2.893 9.19-7.347 11.034l-1.101 0.461-0.922-0.41c-4.352-1.894-7.194-6.195-7.194-10.957v-4.941zM12.029 14.259h1.536v7.347h-1.536v-7.347zM12.029 10.394h1.536v2.483h-1.536v-2.483z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        <span class="gdpr-nav-tab-title">Cookie management policy
+                        </span>
+                    </button>
+                </li>
+
+                <li class="menu-item-strict-necessary-cookies menu-item-off">
+                    <button data-href="#strict-necessary-cookies" class="moove-gdpr-tab-nav"
+                        aria-label="Neophodni kolačići">
+                        <span class="gdpr-svg-icon">
+                            <svg class="icon icon-strict-necessary" viewBox="0 0 26 32">
+                                <path
+                                    d="M22.685 5.478l-9.984 10.752-2.97-4.070c-0.333-0.461-0.973-0.538-1.434-0.205-0.435 0.333-0.538 0.947-0.23 1.408l3.686 5.094c0.179 0.256 0.461 0.41 0.768 0.435h0.051c0.282 0 0.538-0.102 0.742-0.307l10.854-11.699c0.358-0.435 0.333-1.075-0.102-1.434-0.384-0.384-0.998-0.358-1.382 0.026v0zM22.301 12.954c-0.563 0.102-0.922 0.64-0.794 1.203 0.128 0.614 0.179 1.229 0.179 1.843 0 5.094-4.122 9.216-9.216 9.216s-9.216-4.122-9.216-9.216 4.122-9.216 9.216-9.216c1.536 0 3.021 0.384 4.378 1.101 0.512 0.23 1.126 0 1.357-0.538 0.205-0.461 0.051-0.998-0.384-1.254-5.478-2.944-12.314-0.922-15.283 4.557s-0.922 12.314 4.557 15.258 12.314 0.922 15.258-4.557c0.896-1.638 1.357-3.482 1.357-5.35 0-0.768-0.077-1.51-0.23-2.253-0.102-0.538-0.64-0.896-1.178-0.794z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        <span class="gdpr-nav-tab-title">Necessary cookies
+                        </span>
+                    </button>
+                </li>
+
+
+                <li class="menu-item-off menu-item-third_party_cookies">
+                    <button data-href="#third_party_cookies" class="moove-gdpr-tab-nav"
+                        aria-label="Analitički kolačići">
+                        <span class="gdpr-svg-icon">
+                            <svg class="icon icon-3rd-party" viewBox="0 0 26 32">
+                                <path
+                                    d="M25.367 3.231c-0.020 0-0.040 0-0.060 0.020l-4.98 1.080c-0.16 0.040-0.2 0.16-0.080 0.28l1.42 1.42-10.060 10.040 1.14 1.14 10.060-10.060 1.42 1.42c0.12 0.12 0.24 0.080 0.28-0.080l1.060-5.020c0-0.14-0.080-0.26-0.2-0.24zM1.427 6.371c-0.74 0-1.4 0.66-1.4 1.4v19.6c0 0.74 0.66 1.4 1.4 1.4h19.6c0.74 0 1.4-0.66 1.4-1.4v-14.6h-1.6v14.4h-19.2v-19.2h14.38v-1.6h-14.58z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                        <span class="gdpr-nav-tab-title">Analytical cookies</span>
+                    </button>
+                </li>
+
+                <li class="menu-item-advanced-cookies menu-item-off">
+                    <button data-href="#advanced-cookies" class="moove-gdpr-tab-nav"
+                        aria-label="Marketinški kolačići">
+                        <span class="gdpr-svg-icon">
+                            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <g data-name="1">
+                                    <path
+                                        d="M293.9,450H233.53a15,15,0,0,1-14.92-13.42l-4.47-42.09a152.77,152.77,0,0,1-18.25-7.56L163,413.53a15,15,0,0,1-20-1.06l-42.69-42.69a15,15,0,0,1-1.06-20l26.61-32.93a152.15,152.15,0,0,1-7.57-18.25L76.13,294.1a15,15,0,0,1-13.42-14.91V218.81A15,15,0,0,1,76.13,203.9l42.09-4.47a152.15,152.15,0,0,1,7.57-18.25L99.18,148.25a15,15,0,0,1,1.06-20l42.69-42.69a15,15,0,0,1,20-1.06l32.93,26.6a152.77,152.77,0,0,1,18.25-7.56l4.47-42.09A15,15,0,0,1,233.53,48H293.9a15,15,0,0,1,14.92,13.42l4.46,42.09a152.91,152.91,0,0,1,18.26,7.56l32.92-26.6a15,15,0,0,1,20,1.06l42.69,42.69a15,15,0,0,1,1.06,20l-26.61,32.93a153.8,153.8,0,0,1,7.57,18.25l42.09,4.47a15,15,0,0,1,13.41,14.91v60.38A15,15,0,0,1,451.3,294.1l-42.09,4.47a153.8,153.8,0,0,1-7.57,18.25l26.61,32.93a15,15,0,0,1-1.06,20L384.5,412.47a15,15,0,0,1-20,1.06l-32.92-26.6a152.91,152.91,0,0,1-18.26,7.56l-4.46,42.09A15,15,0,0,1,293.9,450ZM247,420h33.39l4.09-38.56a15,15,0,0,1,11.06-12.91A123,123,0,0,0,325.7,356a15,15,0,0,1,17,1.31l30.16,24.37,23.61-23.61L372.06,328a15,15,0,0,1-1.31-17,122.63,122.63,0,0,0,12.49-30.14,15,15,0,0,1,12.92-11.06l38.55-4.1V232.31l-38.55-4.1a15,15,0,0,1-12.92-11.06A122.63,122.63,0,0,0,370.75,187a15,15,0,0,1,1.31-17l24.37-30.16-23.61-23.61-30.16,24.37a15,15,0,0,1-17,1.31,123,123,0,0,0-30.14-12.49,15,15,0,0,1-11.06-12.91L280.41,78H247l-4.09,38.56a15,15,0,0,1-11.07,12.91A122.79,122.79,0,0,0,201.73,142a15,15,0,0,1-17-1.31L154.6,116.28,131,139.89l24.38,30.16a15,15,0,0,1,1.3,17,123.41,123.41,0,0,0-12.49,30.14,15,15,0,0,1-12.91,11.06l-38.56,4.1v33.38l38.56,4.1a15,15,0,0,1,12.91,11.06A123.41,123.41,0,0,0,156.67,311a15,15,0,0,1-1.3,17L131,358.11l23.61,23.61,30.17-24.37a15,15,0,0,1,17-1.31,122.79,122.79,0,0,0,30.13,12.49,15,15,0,0,1,11.07,12.91ZM449.71,279.19h0Z"
+                                        fill="currentColor" />
+                                    <path
+                                        d="M263.71,340.36A91.36,91.36,0,1,1,355.08,249,91.46,91.46,0,0,1,263.71,340.36Zm0-152.72A61.36,61.36,0,1,0,325.08,249,61.43,61.43,0,0,0,263.71,187.64Z"
+                                        fill="currentColor" />
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="gdpr-nav-tab-title">Marketing cookies</span>
+                    </button>
+                </li>
+
+            </ul>
+
+            <div class="moove-gdpr-branding-cnt">
+
+            </div>
+            <!--  .moove-gdpr-branding -->
+        </div>
+        <!--  .moove-gdpr-modal-left-content -->
+        <div class="moove-gdpr-modal-right-content">
+            <div class="moove-gdpr-modal-title">
+
+            </div>
+            <!-- .moove-gdpr-modal-ritle -->
+            <div class="main-modal-content">
+
+                <div class="moove-gdpr-tab-content">
+
+                    <div id="privacy_overview" class="moove-gdpr-tab-main">
+                        <span class="tab-title">Cookie management policy</span>
+                        <div class="moove-gdpr-tab-main-content">
+                            <br />
+                            <h3>
+                                About cookies</h3>
+                            <p>When visiting the website <a href="index.html">www.wra.go.ke</a>
+
+                                whose owner is the information necessary to
+                                improve your user experience is collected.
+                                These technologies, which include cookies, pixels, web bookmarks and gifs, are
+                                collectively referred to in this Cookie Management Policy as "cookies"..</p>
+
+
+                            <p>You can find information on the protection of personal data processed by NIS in our
+                                Privacy Policy, and if you have any questions regarding the processing of personal
+                                data, please contact the organization
+                                part of NIS in charge of personal data protection management, by sending an inquiry
+                                to the e-mail address <a href="mailto:info@wra.go.ke"> info@wra.go.ke </a></p>
+
+                            <p>By using cookies on our website we may collect information about your computer that
+                                may include IP address, browser type, domain name,
+                                access time and website addresses. On the website <a
+                                    href="index.html">www.wra.go.ke</a> The use of cookies is enabled only if you
+                                have given us your consent for this activity
+                                by selecting the appropriate option in the cookie management options settings
+                                section (link to settings).</p>
+
+                            <h3>What are cookies?</h3>
+
+
+                            <p>Cookies are small text databases (files) that are usually downloaded to your
+                                computer, tablet or mobile device (hereinafter: device) from the Internet sites you
+                                visit.
+                                Cookies are used to work on all functions of the website, to achieve a better user
+                                experience, and also enable the analysis of site visits and advanced online
+                                advertising.</p>
+
+                            <h3>Types of cookies
+                            </h3>
+
+                            <p>To better understand cookies and how to control them, below you can find out what
+                                types of cookies exist, as well as how they are used on the website:</p>
+                            <ul>
+                                <li>First-party cookies Cookies installed on your device by an organization whose
+                                    website you visit are known as first-party cookies..</li>
+                                <li>Third party cookies Cookies that are installed on your device by another
+                                    organization in relation to the page you are visiting are known as "third party
+                                    cookies"..</li>
+
+
+                                <li>Persistent cookies Persistent cookies remain stored on your device even after
+                                    you close your browser.
+                                    With the help of these cookies, the website stores data in order to facilitate
+                                    their use. For example,
+                                    Websites that require you to enter your username and password will remember your
+                                    entry, which will appear with each new visit..</li>
+
+
+                                <li>Temporary cookies ("session cookies") Temporary cookies are removed from your
+                                    device when you close the browser through which you visited a particular
+                                    website.
+                                    These cookies are used by the site to store temporary data for its proper
+                                    functioning.</li>
+                            </ul>
+
+
+                            <h3> Which cookies the website uses <a href="/">www.wra.go.ke</a>?</h3>
+                            <p>Cookies installed on your device by the organization whose website you are visiting
+                                are known as "first person" cookies.</p>
+                            <ul>
+                                <li><strong>Necessary cookies</strong> or strictly necessary cookies are cookies
+                                    that are used to make the site work and cannot be turned off.
+                                    You can set your browser to notify you of the use or to block these cookies, but
+                                    in that case some parts of the website will not work.</li>
+
+
+                                <li><strong>Other cookies</strong> – of permanent cookies NIS uses:
+                                    <ul>
+                                        <li>If you set the language, font size or a specific version of the site
+                                            (eg high contrast mode), setting cookies are used for this
+                                            user interface. After the adjustment is made, it is not necessary to
+                                            state your preferences on your next visit to this site.</li>
+
+                                        <li>If you use parts of the site for which access you need registration, we
+                                            place an authentication cookie on your computer for this purpose. This
+                                            allows you to go and
+                                            return to those parts of the site without re-authentication.</li>
+
+                                        <li>In order to track the number of visits to measure and improve the
+                                            performance of our website, we use first-person cookies.
+                                            Thanks to these cookies, we can determine which pages are popular or
+                                            less popular.
+                                            Also, thanks to them, we can see how visitors navigate the website, that
+                                            is, how they use it.
+                                            All information collected by these cookies is aggregated, and represents
+                                            anonymized data. If you do not allow these cookies, we will not have
+                                            information when you visit our site.</li>
+
+                                        <li>We can also use services such as Google Analytics to track network
+                                            statistics. In this case, Google places a third-party cookie on your
+                                            computer.
+                                            Such a cookie is also set when we use Google Maps.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <h3>Enabling and disabling cookies</h3>
+
+
+                            <p>On the wra.go.ke website, the user can deactivate or enable cookies at any time
+                                by changing the settings of the offered cookie management options. If you turn off
+                                cookies,
+                                it will not be stored on your internet browser. Cookies can also be turned off via
+                                Internet browser settings.</p>
+
+
+                            <p> The purpose of cookies is to improve and enable the use of our website and their
+                                processes, and it should be borne in mind that by preventing or deleting cookies you
+                                can disable the functioning
+                                all parts of the page or cause them to work differently and look in the internet
+                                browser.</p>
+
+
+                            <p>If you turn off advertising cookies, it is possible that our ads will show less
+                                relevant content for you, or that the same ad may be shown to you more times than
+                                you wish.</p>
+
+
+                            <p>Internet browsers allow you to change your cookie settings. The settings are usually
+                                in the "Options" menu or "Preferences".
+                                The links below may be helpful if the user wants to better understand these
+                                settings:</p>
+                            <ul>
+                                <li><a href="https://support.google.com/chrome/answer/95647?hl=en">cookie settings
+                                        in Chrome</a></li>
+                                <li><a href="https://support.apple.com/en-us/HT201265">cookie settings in Safari</a>
+                                </li>
+                                <li><a
+                                        href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&amp;redirectslug=Cookies">setting
+                                        cookies in Firefox</a></li>
+                                <li><a
+                                        href="https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies">
+                                        Setting cookies in Internet Explorer</a></li>
+                            </ul>
+                            <p>You can also use the site as a source of additional information for managing cookies
+                                &lt;a href=“http://www.aboutcookies.org/“&gt; www.aboutcookies.org &lt;/a&gt;.</p>
+                            <h3>Additional information about cookies</h3>
+
+                            <p>Social networks may also place cookies on your computer. This happens on websites
+                                that allow you to log in and
+                                registration via social media accounts, and if you share the content of the website
+                                on social networks.
+                                The specific impact on your privacy will vary from social network to social network
+                                and depends on your privacy settings
+                                which you have chosen on these networks. You can find out how to manage these
+                                cookies on the websites of these social networks.</p>
+                            <p>You can find out more information about cookies and privacy policy at the following
+                                links:</p>
+                            <ul>
+                                <li><a href="https://policies.google.com/privacy?hl=sr-Latn&amp;gl=rs">Google's
+                                        Privacy Policy</a></li>
+                                <li><a href="https://policies.google.com/technologies/types?hl=sr-Latn&amp;gl=rs">Types
+                                        of cookies used by Google</a></li>
+                                <li><a href="https://www.facebook.com/policies/cookies/">Facebook cookies and other
+                                        storage technologies</a></li>
+                            </ul>
+                        </div>
+                        <!--  .moove-gdpr-tab-main-content -->
+
+                    </div>
+                    <!-- #privacy_overview -->
+                    <div id="strict-necessary-cookies" class="moove-gdpr-tab-main" style="display:none">
+                        <span class="tab-title"></span>
+                        <div class="moove-gdpr-tab-main-content">
+                            <p>Necessary cookies or strictly necessary cookies are cookies that are used to make the
+                                site work and cannot be turned off.
+                                You can set your browser to notify you about the use or to block these cookies,
+                                but in that case some parts of the website will not work.</p>
+                            <div class="moove-gdpr-status-bar gdpr-checkbox-disabled checkbox-selected">
+                                <div class="gdpr-cc-form-wrap">
+                                    <div class="gdpr-cc-form-fieldset">
+                                        <label class="cookie-switch" for="moove_gdpr_strict_cookies">
+                                            <span class="gdpr-sr-only">Enable or Disable Cookies</span>
+                                            <input type="checkbox" aria-label="Neophodni kolačići" disabled
+                                                checked="checked" value="check" name="moove_gdpr_strict_cookies"
+                                                id="moove_gdpr_strict_cookies">
+                                            <span class="cookie-slider cookie-round" data-text-enable="Uključeno"
+                                                data-text-disabled="Isključeno"></span>
+                                        </label>
+                                    </div>
+                                    <!-- .gdpr-cc-form-fieldset -->
+                                </div>
+                                <!-- .gdpr-cc-form-wrap -->
+                            </div>
+                            <!-- .moove-gdpr-status-bar -->
+                            <div class="moove-gdpr-strict-warning-message" style="margin-top: 10px;">
+                                <p>If you disable this cookie, we will not be able to save your preferences. This
+                                    means that every time you visit this website you will need to enable or disable
+                                    cookies again.</p>
+                            </div>
+                            <!--  .moove-gdpr-tab-main-content -->
+
+                        </div>
+                        <!--  .moove-gdpr-tab-main-content -->
+                    </div>
+                    <!-- #strict-necesarry-cookies -->
+
+                    <div id="third_party_cookies" class="moove-gdpr-tab-main" style="display:none">
+                        <span class="tab-title">Analytical cookies</span>
+                        <div class="moove-gdpr-tab-main-content">
+                            <p>Analytical cookies are small pieces of data that give us the ability to recognize and
+                                remember users.
+                                They are placed on your computer, tablet or mobile device via a browser.
+                                They enable the provision of personalized service on web pages because they track
+                                which parts of the web page users visit,
+                                they also help measure ad and search effectiveness. Based on this information, it is
+                                possible to improve communication and products.</p>
+                            <div class="moove-gdpr-status-bar">
+                                <div class="gdpr-cc-form-wrap">
+                                    <div class="gdpr-cc-form-fieldset">
+                                        <label class="cookie-switch" for="moove_gdpr_performance_cookies">
+                                            <span class="gdpr-sr-only">Enable or Disable Cookies</span>
+                                            <input type="checkbox" aria-label="Analitički kolačići" value="check"
+                                                name="moove_gdpr_performance_cookies"
+                                                id="moove_gdpr_performance_cookies">
+                                            <span class="cookie-slider cookie-round" data-text-enable="Uključeno"
+                                                data-text-disabled="Isključeno"></span>
+                                        </label>
+                                    </div>
+                                    <!-- .gdpr-cc-form-fieldset -->
+                                </div>
+                                <!-- .gdpr-cc-form-wrap -->
+                            </div>
+                            <!-- .moove-gdpr-status-bar -->
+                            <div class="moove-gdpr-strict-secondary-warning-message"
+                                style="margin-top: 10px; display: none;">
+                                <p>Please enable Strictly Necessary Cookies first so that we can save your
+                                    preferences!</p>
+                            </div>
+                            <!--  .moove-gdpr-tab-main-content -->
+
+                        </div>
+                        <!--  .moove-gdpr-tab-main-content -->
+                    </div>
+                    <!-- #third_party_cookies -->
+
+                    <div id="advanced-cookies" class="moove-gdpr-tab-main" style="display:none">
+                        <span class="tab-title">Marketing cookies</span>
+                        <div class="moove-gdpr-tab-main-content">
+                            <p>Social networks may also place cookies on your computer. This happens on websites
+                                that allow you to log in
+                                and registration through social media accounts, and if you share the content of the
+                                website on social networks. Concrete impact
+                                your privacy will vary from social network to social network and depends on the
+                                privacy settings you choose
+                                on those networks. You can find out how to manage these cookies on the websites of
+                                these social networks.</p>
+                            <div class="moove-gdpr-status-bar">
+                                <div class="gdpr-cc-form-wrap">
+                                    <div class="gdpr-cc-form-fieldset">
+                                        <label class="cookie-switch" for="moove_gdpr_advanced_cookies">
+                                            <span class="gdpr-sr-only">Enable or Disable Cookies</span>
+                                            <input type="checkbox" aria-label="Marketing Cookies" value="check"
+                                                name="moove_gdpr_advanced_cookies" id="moove_gdpr_advanced_cookies">
+                                            <span class="cookie-slider cookie-round" data-text-enable="Uključeno"
+                                                data-text-disabled="Isključeno"></span>
+                                        </label>
+                                    </div>
+                                    <!-- .gdpr-cc-form-fieldset -->
+                                </div>
+                                <!-- .gdpr-cc-form-wrap -->
+                            </div>
+                            <!-- .moove-gdpr-status-bar -->
+                            <div class="moove-gdpr-strict-secondary-warning-message"
+                                style="margin-top: 10px; display: none;">
+                                <p>Please enable Strictly Necessary Cookies first so that we can save your
+                                    preferences!</p>
+                            </div>
+                            <!--  .moove-gdpr-strict-secondary-warning-message -->
+
+                        </div>
+                        <!--  .moove-gdpr-tab-main-content -->
+                    </div>
+                    <!-- #advanced-cookies -->
+
+                </div>
+                <!--  .moove-gdpr-tab-content -->
+            </div>
+            <!--  .main-modal-content -->
+            <div class="moove-gdpr-modal-footer-content">
+                <div class="moove-gdpr-button-holder">
+                    <button class="mgbutton moove-gdpr-modal-allow-all button-visible"
+                        aria-label="Accept All Cookies">ACCEPT ALL COOKIES</button>
+
+
+                    <button class="mgbutton moove-gdpr-modal-save-settings button-visible"
+                        aria-label="Save Settings">SAVE SETTINGS</button>
+                </div>
+                <!--  .moove-gdpr-button-holder -->
+            </div>
+            <!--  .moove-gdpr-modal-footer-content -->
+        </div>
+        <!--  .moove-gdpr-modal-right-content -->
+
+        <div class="moove-clearfix"></div>
+
+    </div>
+    <!--  .moove-gdpr-modal-content -->
+</div>
+<!-- #moove_gdpr_cookie_modal -->
 
 
 </body>
 
+{% endblock %}
 
-</html>
+{% block myotherjs %}
+
+{% endblock %}

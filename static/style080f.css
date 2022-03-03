@@ -68,7 +68,7 @@ figure,
 footer,
 header,
 hgroup,
-nav,
+
 section {
     display: block;
 }
@@ -1435,6 +1435,7 @@ img {
     font-size: 2vw;
     font-weight: 700;
     line-height: 120%;
+    margin-top: 12em;
 }
 
 @media screen and (max-width: 767px) {
@@ -3939,6 +3940,7 @@ img {
     background: #001343;
     transform: scaleY(0);
     transform-origin: top;
+    
 }
 
 @media screen and (max-width: 767px) {
@@ -4011,7 +4013,7 @@ img {
 }
 
 .menu__inner {
-    max-width: 58vw;
+    max-width: 90vw;
     margin: 0 auto;
 }
 
