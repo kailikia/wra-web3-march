@@ -66,6 +66,23 @@ def videos():
 def contact():
     return render_template("frontend/contact.html")
 
+@app.route("/laboratoryServices")
+def laboratoryServices():
+    return render_template("frontend/laboratoryServices.html")
+
+@app.route("/surfacewater")
+def surfacewater():
+    return render_template("frontend/surfacewater.html")
+
+@app.route("/groundwater")
+def groundwater():
+    return render_template("frontend/groundwater.html")
+
+@app.route("/waterquality")
+def waterquality():
+    return render_template("frontend/waterquality.html")
+
+
 
 ## End Frontend Routes
 
