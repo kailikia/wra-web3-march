@@ -6,14 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="icon" type="image/png" sizes="256x256" href="/static/assets/images/wra-logo.png">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="static/wp-content/themes/Jazak/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="256x256" href="static/wp-content/themes/Jazak/favicon-256x256.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="static/wp-content/themes/Jazak/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="150x150" href="static/wp-content/themes/Jazak/favicon-150x150.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/wp-content/themes/Jazak/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/wp-content/themes/Jazak/favicon-16x16.png">
+
     <link rel="preload" href="static/wp-content/themes/Jazak/assets/fonts/Gilroy-Extrabold.html" as="font"
         type="font/woff2" crossorigin>
     <link rel="preload" href="static/wp-content/themes/Jazak/assets/fonts/Gilroy-RegularItalic.html" as="font"
@@ -211,9 +206,9 @@
 	 height: 8em;
 	 background: rgba(255,255,255,.5);
      /* opacity: .5; */
-     position: absolute;
+     position: fixed;
      width: 100%;
-     z-index: 1;
+     z-index: 5;
 }
  .brand {
 	 position: absolute;
@@ -252,8 +247,9 @@
 	 text-decoration: none;
 }
  nav ul li a:hover, nav ul li a:visited:hover {
-	 background: #2581dc;
-	 color: #fff;
+    
+    border-bottom: 3px blue solid;
+    color: blue;
      text-decoration: none;
 }
  nav ul li a:not(:only-child):after, nav ul li a:visited:not(:only-child):after {
@@ -370,9 +366,9 @@
           <nav>
             <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
             <ul class="nav-list">
-              <!-- <li>
-                <a href="#!">Home</a>
-              </li> -->
+              <li>
+                <a href="/">Home</a>
+              </li>
               <li>
                 <a href="#!">About</a>
                 <ul class="nav-dropdown">
@@ -968,6 +964,9 @@
     });
   }); // end DOM ready
 })(jQuery); // end jQuery
+
+
+
  </script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -983,7 +982,7 @@
     </script>
     <!--End of Tawk.to Script-->
 
-
+    <script>(function(d){var s = d.createElement("script");s.setAttribute("data-account", "eyVQHyevY7");s.setAttribute("src", "https://cdn.userway.org/widget.js");(d.body || d.head).appendChild(s);})(document)</script><noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
     {% block myjs %}{% endblock %}
 
 </body>
