@@ -1406,10 +1406,11 @@ img {
   transition: 0.7s transform, 0.3s opacity;
 }
 .sea__text-one {
+  text-align: center;
   text-transform: uppercase;
   font-size: 3.125vw;
-  letter-spacing: -0.05208333333vw;
-  font-weight: 800;
+  /* letter-spacing: -0.05208333333vw; */
+  /* font-weight: 800; */
   transition: 0.7s;
   will-change: font-size;
 }

@@ -1414,14 +1414,14 @@ img {
 }
 
 .sea__text-one {
+    text-align: center;
     text-transform: uppercase;
     font-size: 3.125vw;
-    letter-spacing: -0.05208333333vw;
-    font-weight: 800;
+    /* letter-spacing: -0.05208333333vw; */
+    /* font-weight: 800; */
     transition: 0.7s;
     will-change: font-size;
 }
-
 @media screen and (max-width: 767px) {
     .sea__text-one {
         font-size: 4.954367666vw;
