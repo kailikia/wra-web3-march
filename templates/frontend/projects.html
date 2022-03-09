@@ -50,6 +50,10 @@
     display: flex;
     flex-wrap: wrap;
   }
+  .tab {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   .tabs label {
     order: 1;
@@ -79,7 +83,7 @@
   }
 
   .tabs input[type="radio"]:checked+label {
-    background: rgb(37, 182, 56);
+    background: rgb(98, 182, 70);
     color: whitesmoke;
   }
 
@@ -851,7 +855,7 @@
       }
     })
 
-    polygonSeries.mapPolygons.template.states.create("hover", { fillOpacity: .5 });
+    polygonSeries.mapPolygons.template.states.create("hover", { fillOpacity: .7 });
 
     // Create point series
     var pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {
@@ -965,7 +969,7 @@
       }
     })
 
-    polygonSeries.mapPolygons.template.states.create("hover", { fillOpacity: 1 });
+    polygonSeries.mapPolygons.template.states.create("hover", { fillOpacity: .7 });
 
     // Create point series
     var pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {
